@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciivhfy0h1cjy"]
+
+[ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="1_5mr4q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvo4y"]
+size = Vector2(1920, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 1071)
+shape = SubResource("RectangleShape2D_gvo4y")
+
+[node name="Percy" parent="." instance=ExtResource("1_5mr4q")]
+position = Vector2(969, 978)
