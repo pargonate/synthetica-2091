@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h5qad2s6di7w"]
+[gd_scene load_steps=26 format=3 uid="uid://h5qad2s6di7w"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Percy.cs" id="1_k08hw"]
 [ext_resource type="Texture2D" uid="uid://bgsup5l88pavy" path="res://sprites/PR7-2.9.png" id="1_ryrn4"]
@@ -41,6 +41,30 @@ region = Rect2(576, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_emt55"]
 atlas = ExtResource("1_ryrn4")
 region = Rect2(608, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy3na"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(320, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcq0i"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(352, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u83d7"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(384, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1sk0"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(416, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8i77"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(448, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jikoe"]
+atlas = ExtResource("1_ryrn4")
+region = Rect2(480, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qg5np"]
 atlas = ExtResource("1_ryrn4")
@@ -109,6 +133,29 @@ animations = [{
 "loop": false,
 "name": &"jump",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy3na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcq0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u83d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1sk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8i77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jikoe")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,

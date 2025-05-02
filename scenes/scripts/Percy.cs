@@ -4,7 +4,8 @@ using System;
 public partial class Percy : CharacterBody2D
 {
 	[Export]
-	public float speed { get; set; } = 200.0f;
+	public float walk { get; set; } = 200.0f;
+	public float run { get; set; } = 500.0f;
 	[Export]
 	public float jump { get; set; } = 350.0f;
 	public bool animationBusy = false;
@@ -51,12 +52,22 @@ public partial class Percy : CharacterBody2D
 
 		if (Input.IsActionPressed("left"))
 		{
-			velocity.X -= speed;
+			velocity.X -= walk;
+			if (Input.IsKeyPressed(Godot.Key.Shift))
+			{
+				velocity.X -= run;
+				Console.WriteLine(velocity.X);
+			}
 		}
 
 		if (Input.IsActionPressed("right"))
 		{
-			velocity.X = speed;
+			velocity.X = walk;
+
+			if (Input.IsKeyPressed(Godot.Key.Shift))
+			{
+				velocity.X = run;
+			}
 		}		
 
 		Velocity = velocity;
@@ -66,8 +77,13 @@ public partial class Percy : CharacterBody2D
 	private void _UpdateMovementAnimations(float velocityX)
 	{
 		bool walking = velocityX != 0;
+		bool running = velocityX > 200.0f || velocityX < -200.0f;
 
-		if (walking) {
+		if (running) {
+			animator.Play("run");
+			animator.FlipH = velocityX < 0;
+		}
+		else if (walking) {
 			animator.Play("walk");
 			animator.FlipH = velocityX < 0;
 		}

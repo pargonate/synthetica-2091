@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://cfxcfsnxhrgsn"]
+
+[ext_resource type="Texture2D" uid="uid://dufelw6jrh0pm" path="res://sprites/glitch.png" id="1_xpe3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3t3t"]
+size = Vector2(196, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xphla"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(800, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpvkm"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(1000, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25d0b"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(1200, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frnxw"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(1400, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yhyw"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(1600, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2he5a"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(1800, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyc16"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(2000, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostne"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(0, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaerv"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(200, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a4ri"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(400, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj6yg"]
+atlas = ExtResource("1_xpe3v")
+region = Rect2(600, 0, 200, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmmux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpvkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25d0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frnxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yhyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2he5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyc16")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ostne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaerv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a4ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj6yg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="glitch" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_w3t3t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bmmux")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0724303
