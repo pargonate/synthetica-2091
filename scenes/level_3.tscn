@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctgwyygyg3uoj"]
+
+[ext_resource type="Texture2D" uid="uid://hvt65pietf5u" path="res://level_backgrounds/level_3.png" id="1_qey5e"]
+[ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_qa63q"]
+[ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_153qs"]
+[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="4_ro7br"]
+[ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="5_3vkwy"]
+[ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="6_3roal"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emwy4"]
+resource_name = "floor"
+texture = ExtResource("2_qa63q")
+texture_region_size = Vector2i(200, 75)
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -37.5, 100, -37.5, 100, 37.5, -100, 37.5)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xramc"]
+scenes/1/scene = ExtResource("3_153qs")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xfslp"]
+scenes/1/scene = ExtResource("4_ro7br")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0xua2"]
+scenes/1/scene = ExtResource("5_3vkwy")
+
+[sub_resource type="TileSet" id="TileSet_sxsac"]
+tile_size = Vector2i(200, 75)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_emwy4")
+sources/1 = SubResource("TileSetScenesCollectionSource_xramc")
+sources/2 = SubResource("TileSetScenesCollectionSource_xfslp")
+sources/3 = SubResource("TileSetScenesCollectionSource_0xua2")
+
+[node name="level_3" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(10657, 3074)
+scale = Vector2(4, 4)
+texture = ExtResource("1_qey5e")
+
+[node name="tilemap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_sxsac")
+format = 2
+layer_0/tile_data = PackedInt32Array(851968, 1, 65536, 851969, 1, 65536, 851970, 1, 65536, 851971, 1, 65536, 851972, 1, 65536, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 1310731, 0, 0, 1310732, 0, 0, 1310733, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 2621458, 0, 0, 2621459, 0, 0, 2621460, 0, 0, 2621461, 0, 0, 2621462, 0, 0, 2621463, 0, 0, 2621464, 0, 0, 2621465, 0, 0, 2621466, 0, 0, 2621467, 0, 0, 2621468, 0, 0, 2621469, 0, 0, 2687038, 0, 0, 2687036, 0, 0, 2687037, 0, 0, 2424893, 3, 65536, 2293823, 0, 0, 2031680, 3, 65536, 2293824, 0, 0, 2293825, 0, 0, 1835074, 0, 0, 1572931, 3, 65536, 1835075, 0, 0, 1835076, 0, 0, 1376325, 0, 0, 1376326, 0, 0, 1376327, 0, 0, 1376328, 0, 0, 1376329, 0, 0, 1376330, 0, 0, 1376331, 0, 0, 1376332, 0, 0, 1376333, 0, 0, 1376334, 0, 0, 1376335, 0, 0, 1376336, 0, 0, 1376337, 0, 0, 1376338, 0, 0, 1376339, 0, 0, 1376340, 0, 0, 1376341, 0, 0, 1376342, 0, 0, 1376343, 0, 0, 1376344, 0, 0, 1376345, 0, 0, 1376346, 0, 0, 1376347, 0, 0, 1376348, 0, 0, 1376349, 0, 0, 1376350, 0, 0, 1376351, 0, 0, 1376352, 0, 0, 1376353, 0, 0, 1376354, 0, 0, 1376355, 0, 0, 1376356, 0, 0, 1376357, 0, 0, 1376358, 0, 0, 2621472, 2, 65536, 2621478, 2, 65536, 2621485, 1, 65536, 2621489, 1, 65536, 2621493, 1, 65536, 2621497, 1, 65536)
+
+[node name="Percy" parent="." instance=ExtResource("6_3roal")]
+position = Vector2(551, 451)

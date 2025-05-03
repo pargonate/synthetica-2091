@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbfm0v2qdy76g"]
+
+[ext_resource type="Texture2D" uid="uid://ek8sql1x3os2" path="res://level_backgrounds/level_2.png" id="1_mmewr"]
+[ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_40x7x"]
+[ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_1fsf2"]
+[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="4_r8cxc"]
+[ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="5_eju83"]
+[ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="6_17ujt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emwy4"]
+resource_name = "floor"
+texture = ExtResource("2_40x7x")
+texture_region_size = Vector2i(200, 75)
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -37.5, 100, -37.5, 100, 37.5, -100, 37.5)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xramc"]
+scenes/1/scene = ExtResource("3_1fsf2")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xfslp"]
+scenes/1/scene = ExtResource("4_r8cxc")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0xua2"]
+scenes/1/scene = ExtResource("5_eju83")
+
+[sub_resource type="TileSet" id="TileSet_7uokm"]
+tile_size = Vector2i(200, 75)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_emwy4")
+sources/1 = SubResource("TileSetScenesCollectionSource_xramc")
+sources/2 = SubResource("TileSetScenesCollectionSource_xfslp")
+sources/3 = SubResource("TileSetScenesCollectionSource_0xua2")
+
+[node name="level_2" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(10657, 3074)
+scale = Vector2(4, 4)
+texture = ExtResource("1_mmewr")
+
+[node name="tilemap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_7uokm")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 2490373, 2, 65536, 2490374, 2, 65536, 2490375, 2, 65536, 2490376, 2, 65536, 2490377, 2, 65536, 1900556, 0, 0, 1900557, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900561, 0, 0, 1900562, 0, 0, 1900563, 0, 0, 3276822, 0, 0, 3276823, 0, 0, 3276824, 0, 0, 3276825, 0, 0, 3276826, 0, 0, 3276827, 0, 0, 3276828, 0, 0, 3145759, 1, 65536, 3211296, 1, 65536, 3145761, 1, 65536, 3211298, 1, 65536, 3145763, 1, 65536, 3211300, 1, 65536, 3145765, 1, 65536, 3211302, 1, 65536, 3145767, 1, 65536, 3211304, 1, 65536, 3145769, 1, 65536, 3211306, 1, 65536, 3145771, 1, 65536, 3211308, 1, 65536, 3145773, 1, 65536, 3211310, 1, 65536, 3145775, 1, 65536, 3211312, 1, 65536, 3145777, 1, 65536, 3211314, 1, 65536, 3145779, 1, 65536, 3211316, 1, 65536, 3145781, 1, 65536, 3211318, 1, 65536, 3145783, 1, 65536, 3211320, 1, 65536, 3145785, 1, 65536, 3211322, 1, 65536, 3145787, 1, 65536, 3211324, 1, 65536, 3145789, 1, 65536, 3211326, 1, 65536, 3145791, 1, 65536, 3211328, 1, 65536, 3145793, 1, 65536, 3211330, 1, 65536, 2883643, 2, 65536, 2883634, 2, 65536, 2883624, 2, 65536, 3735621, 0, 0, 3735622, 0, 0, 3735623, 0, 0, 3735624, 0, 0, 3735625, 0, 0, 3735626, 0, 0, 3735627, 0, 0, 3735628, 0, 0, 3735629, 0, 0, 3735630, 0, 0, 3735631, 0, 0, 3735632, 0, 0, 3735633, 0, 0, 3735634, 0, 0, 3735635, 0, 0, 3735636, 0, 0, 3735637, 0, 0, 3735638, 0, 0, 3735639, 0, 0, 4522075, 2, 65536, 4522076, 2, 65536, 4522077, 2, 65536, 4522078, 2, 65536, 4522079, 2, 65536, 4522080, 2, 65536)
+
+[node name="Percy" parent="." instance=ExtResource("6_17ujt")]
+position = Vector2(551, 451)

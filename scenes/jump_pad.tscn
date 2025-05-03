@@ -1,9 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://btfxvjs7r40i6"]
+[gd_scene load_steps=13 format=3 uid="uid://btfxvjs7r40i6"]
 
 [ext_resource type="Texture2D" uid="uid://des5b21xecw6g" path="res://sprites/jump_pad.png" id="1_6a1pj"]
+[ext_resource type="Script" path="res://scenes/jump_pad.cs" id="1_wsv6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vpo4"]
-size = Vector2(196, 47)
+size = Vector2(196, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt43i"]
+atlas = ExtResource("1_6a1pj")
+region = Rect2(1000, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v0n5"]
+atlas = ExtResource("1_6a1pj")
+region = Rect2(800, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv5f1"]
+atlas = ExtResource("1_6a1pj")
+region = Rect2(1200, 0, 200, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr657"]
+atlas = ExtResource("1_6a1pj")
+region = Rect2(1400, 0, 200, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0udd"]
 atlas = ExtResource("1_6a1pj")
@@ -25,6 +42,23 @@ region = Rect2(600, 0, 200, 50)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bt43i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v0n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv5f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr657")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p0udd")
 }, {
 "duration": 1.0,
@@ -43,13 +77,19 @@ animations = [{
 
 [node name="jump_pad" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_wsv6e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1.5)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_8vpo4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="animator" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pmli1")
-animation = &"idle"
+animation = &"bounce"
 autoplay = "idle"
-frame_progress = 0.927997
+frame = 3
+frame_progress = 1.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

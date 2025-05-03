@@ -7,7 +7,7 @@ public partial class Percy : CharacterBody2D
 	public float walk { get; set; } = 200.0f;
 	public float run { get; set; } = 500.0f;
 	[Export]
-	public float jump { get; set; } = 350.0f;
+	public float jump { get; set; } = 600.0f;
 	public bool animationBusy = false;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
  	private AnimatedSprite2D animator;
@@ -29,6 +29,12 @@ public partial class Percy : CharacterBody2D
 			} else
 			{
 				animator.Play("fall");
+
+				if (Input.IsKeyPressed(Godot.Key.A) || Input.IsKeyPressed(Godot.Key.Left)) {
+					animator.FlipH = true;
+				} else if (Input.IsKeyPressed(Godot.Key.D) || Input.IsKeyPressed(Godot.Key.Right)) {
+					animator.FlipH = false;
+				}
 			}
 
 			velocity.Y += gravity * (float)delta;
@@ -45,6 +51,8 @@ public partial class Percy : CharacterBody2D
 				animator.Play("idle");
 			}
 
+			Camera2D camera = GetNode<Camera2D>("Camera2D");
+			camera.Zoom = new Vector2(1.4f, 1.4f);
 			_UpdateMovementAnimations(velocity.X);
 		}
 

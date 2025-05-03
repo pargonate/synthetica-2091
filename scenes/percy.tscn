@@ -194,3 +194,7 @@ shape = SubResource("RectangleShape2D_gm3vd")
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_yal8e")
 animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -49.2)
+zoom = Vector2(1.4, 1.4)

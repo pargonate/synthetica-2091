@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkevkc3jyfk2o"]
+[gd_scene load_steps=9 format=3 uid="uid://bkevkc3jyfk2o"]
 
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="1_5wxw4"]
 [ext_resource type="Texture2D" uid="uid://o10k0i80qn1w" path="res://level_backgrounds/level_1.png" id="1_mvygf"]
 [ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="2_n8chc"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="3_iju3n"]
 [ext_resource type="PackedScene" uid="uid://cfyla2nru50m0" path="res://scenes/firewall.tscn" id="5_a0eq6"]
+[ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="6_trd2q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emwy4"]
+resource_name = "floor"
+texture = ExtResource("6_trd2q")
+texture_region_size = Vector2i(200, 75)
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-100, -37.5, 100, -37.5, 100, 37.5, -100, 37.5)
+
+[sub_resource type="TileSet" id="TileSet_1qx0l"]
+tile_size = Vector2i(200, 75)
+sources/0 = SubResource("TileSetAtlasSource_emwy4")
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,10 +39,15 @@ texture = ExtResource("1_mvygf")
 position = Vector2(947, 966)
 
 [node name="jump_pad" parent="." instance=ExtResource("2_n8chc")]
-position = Vector2(1188, 964)
+position = Vector2(1703, 923)
 
 [node name="data_stream" parent="." instance=ExtResource("3_iju3n")]
 position = Vector2(676, 751)
 
 [node name="firewall" parent="." instance=ExtResource("5_a0eq6")]
 position = Vector2(-19, 519)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_1qx0l")
+format = 2
+layer_0/tile_data = PackedInt32Array(3932248, 0, 0, 786439, 0, 0)
