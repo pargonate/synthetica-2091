@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://o10k0i80qn1w" path="res://level_backgrounds/level_1.png" id="1_x6mvy"]
 [ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_vxgxp"]
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="3_nfd6w"]
-[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="4_10m6o"]
+[ext_resource type="PackedScene" uid="uid://bmkf7e3db22sv" path="res://scenes/jump_pad.tscn" id="4_10m6o"]
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="4_usx4l"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="5_itdsm"]
 
@@ -43,6 +43,7 @@ sources/2 = SubResource("TileSetScenesCollectionSource_xfslp")
 sources/3 = SubResource("TileSetScenesCollectionSource_0xua2")
 
 [node name="level_1" type="Node2D"]
+rotation = 0.00219334
 
 [node name="background" type="Sprite2D" parent="."]
 texture_filter = 2
@@ -58,3 +59,24 @@ layer_0/tile_data = PackedInt32Array(458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 4
 
 [node name="Percy" parent="." instance=ExtResource("3_nfd6w")]
 position = Vector2(57, 526)
+
+[connection signal="body_entered" from="tilemap/jump_pad" to="tilemap/jump_pad" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110421" to="tilemap/@jump_pad@110421" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110422" to="tilemap/@jump_pad@110422" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110423" to="tilemap/@jump_pad@110423" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/glitch" to="tilemap/glitch" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110425" to="tilemap/@glitch@110425" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110426" to="tilemap/@glitch@110426" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110427" to="tilemap/@glitch@110427" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110428" to="tilemap/@glitch@110428" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110429" to="tilemap/@glitch@110429" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110430" to="tilemap/@glitch@110430" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110431" to="tilemap/@jump_pad@110431" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110432" to="tilemap/@jump_pad@110432" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110433" to="tilemap/@jump_pad@110433" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110434" to="tilemap/@jump_pad@110434" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@110435" to="tilemap/@jump_pad@110435" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110436" to="tilemap/@glitch@110436" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110437" to="tilemap/@glitch@110437" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110438" to="tilemap/@glitch@110438" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@110439" to="tilemap/@glitch@110439" method="_on_body_entered" flags=18]

@@ -1,9 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://blm61cyxuj5ww"]
+[gd_scene load_steps=16 format=3 uid="uid://blm61cyxuj5ww"]
 
+[ext_resource type="Script" path="res://scenes/scripts/data_stream.cs" id="1_l51ti"]
 [ext_resource type="Texture2D" uid="uid://bohltd0jdfi5h" path="res://sprites/data_stream.png" id="1_yqlo6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_803mb"]
-size = Vector2(273, 16)
+[sub_resource type="Curve2D" id="Curve2D_lj8go"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 252, 0, 0, 0, 0, 0, -209)
+}
+point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dj6ue"]
 atlas = ExtResource("1_yqlo6")
@@ -55,15 +59,85 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="data_stream" type="RigidBody2D"]
-gravity_scale = 0.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_803mb"]
+size = Vector2(273, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 244)
-shape = SubResource("RectangleShape2D_803mb")
+[sub_resource type="Animation" id="Animation_oktpv"]
+resource_name = "moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_k6ccr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofvon"]
+_data = {
+"RESET": SubResource("Animation_k6ccr"),
+"moving": SubResource("Animation_oktpv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26fed"]
+size = Vector2(273, 492)
+
+[node name="data_stream" type="Path2D"]
+curve = SubResource("Curve2D_lj8go")
+script = ExtResource("1_l51ti")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, 252)
+rotation = -1.5708
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hjs12")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.615047
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 252)
+rotation = -1.5708
+
+[node name="movingPlatform" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(7.9968, -3.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_803mb")
+debug_color = Color(0.678431, 0.498039, 0.231373, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ofvon")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 6)
+shape = SubResource("RectangleShape2D_26fed")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class jump_pad : RigidBody2D
+public partial class jump_pad : Area2D
 {
 	
 	private AnimatedSprite2D animator;
@@ -13,16 +13,22 @@ public partial class jump_pad : RigidBody2D
 	}
 
 
-	private void _on_area_2d_body_entered(Node body)
+	private async void _on_body_entered(Node body)
 	{
 		if (body is CharacterBody2D character)
 		{
 			if (character is Percy player)
 			{
-				player.Velocity = new Vector2(player.Velocity.X, -20.0f);
+				player.Velocity = new Vector2(player.Velocity.X, -2000.0f);
+				animator.Play("bounce");
+
+				if (player.Velocity.Y < 0)
+				{
+					await ToSignal(GetTree().CreateTimer(0.01f), "timeout");
+				}
+
 				Camera2D camera = player.GetNode<Camera2D>("Camera2D");
 				camera.Zoom = new Vector2(0.8f, 0.8f);
-				animator.Play("bounce");
 			}
 		}
 	}

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqn38ftgf058x"]
+[gd_scene load_steps=6 format=3 uid="uid://bqn38ftgf058x"]
 
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="1_5mr4q"]
-[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="2_gmv5p"]
+[ext_resource type="PackedScene" uid="uid://bmkf7e3db22sv" path="res://scenes/jump_pad.tscn" id="2_gmv5p"]
+[ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_2rpee"]
+[ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="4_bai7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvo4y"]
 size = Vector2(1920, 20)
@@ -19,3 +21,9 @@ position = Vector2(969, 978)
 
 [node name="jump_pad" parent="." instance=ExtResource("2_gmv5p")]
 position = Vector2(1280, 975)
+
+[node name="glitch" parent="." instance=ExtResource("3_2rpee")]
+position = Vector2(631, 973)
+
+[node name="data_stream" parent="." instance=ExtResource("4_bai7h")]
+position = Vector2(234, 803)

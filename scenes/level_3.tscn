@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://hvt65pietf5u" path="res://level_backgrounds/level_3.png" id="1_qey5e"]
 [ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_qa63q"]
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_153qs"]
-[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="4_ro7br"]
+[ext_resource type="PackedScene" uid="uid://bmkf7e3db22sv" path="res://scenes/jump_pad.tscn" id="4_ro7br"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="5_3vkwy"]
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="6_3roal"]
 
@@ -58,3 +58,15 @@ layer_0/tile_data = PackedInt32Array(851968, 1, 65536, 851969, 1, 65536, 851970,
 
 [node name="Percy" parent="." instance=ExtResource("6_3roal")]
 position = Vector2(551, 451)
+
+[connection signal="body_entered" from="tilemap/jump_pad" to="tilemap/jump_pad" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@jump_pad@111178" to="tilemap/@jump_pad@111178" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/glitch" to="tilemap/glitch" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111182" to="tilemap/@glitch@111182" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111183" to="tilemap/@glitch@111183" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111184" to="tilemap/@glitch@111184" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111187" to="tilemap/@glitch@111187" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111188" to="tilemap/@glitch@111188" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111189" to="tilemap/@glitch@111189" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111190" to="tilemap/@glitch@111190" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="tilemap/@glitch@111191" to="tilemap/@glitch@111191" method="_on_body_entered" flags=18]

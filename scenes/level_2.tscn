@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ek8sql1x3os2" path="res://level_backgrounds/level_2.png" id="1_mmewr"]
 [ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_40x7x"]
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_1fsf2"]
-[ext_resource type="PackedScene" uid="uid://btfxvjs7r40i6" path="res://scenes/jump_pad.tscn" id="4_r8cxc"]
+[ext_resource type="PackedScene" uid="uid://bmkf7e3db22sv" path="res://scenes/jump_pad.tscn" id="4_r8cxc"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="5_eju83"]
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="6_17ujt"]
 

@@ -5,6 +5,7 @@ public partial class Percy : CharacterBody2D
 {
 	[Export]
 	public float walk { get; set; } = 200.0f;
+	[Export]
 	public float run { get; set; } = 500.0f;
 	[Export]
 	public float jump { get; set; } = 600.0f;
@@ -17,6 +18,15 @@ public partial class Percy : CharacterBody2D
 		animator = GetNode<AnimatedSprite2D>("animator");
 	}
 
+	public void flip()
+	{
+		if (Input.IsKeyPressed(Godot.Key.A) || Input.IsKeyPressed(Godot.Key.Left)) {
+			animator.FlipH = true;
+		} else if (Input.IsKeyPressed(Godot.Key.D) || Input.IsKeyPressed(Godot.Key.Right)) {
+			animator.FlipH = false;
+		}		
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -26,15 +36,11 @@ public partial class Percy : CharacterBody2D
 			if (velocity.Y < 0)
 			{
 				animator.Play("jump");
+				flip();
 			} else
 			{
 				animator.Play("fall");
-
-				if (Input.IsKeyPressed(Godot.Key.A) || Input.IsKeyPressed(Godot.Key.Left)) {
-					animator.FlipH = true;
-				} else if (Input.IsKeyPressed(Godot.Key.D) || Input.IsKeyPressed(Godot.Key.Right)) {
-					animator.FlipH = false;
-				}
+				flip();
 			}
 
 			velocity.Y += gravity * (float)delta;
@@ -64,7 +70,6 @@ public partial class Percy : CharacterBody2D
 			if (Input.IsKeyPressed(Godot.Key.Shift))
 			{
 				velocity.X -= run;
-				Console.WriteLine(velocity.X);
 			}
 		}
 
@@ -89,12 +94,12 @@ public partial class Percy : CharacterBody2D
 
 		if (running) {
 			animator.Play("run");
-			animator.FlipH = velocityX < 0;
 		}
 		else if (walking) {
 			animator.Play("walk");
-			animator.FlipH = velocityX < 0;
 		}
+
+		flip();
 	}
 
 }

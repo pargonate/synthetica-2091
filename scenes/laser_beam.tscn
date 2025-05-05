@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://cpusdu4jmshm6"]
+
+[ext_resource type="Texture2D" uid="uid://dp7rh3f44krj3" path="res://sprites/laser_beam.png" id="1_848m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owmdt"]
+size = Vector2(60, 571)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06n2k"]
+atlas = ExtResource("1_848m6")
+region = Rect2(0, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swden"]
+atlas = ExtResource("1_848m6")
+region = Rect2(75, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptfpm"]
+atlas = ExtResource("1_848m6")
+region = Rect2(150, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6cq7"]
+atlas = ExtResource("1_848m6")
+region = Rect2(225, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jnsn"]
+atlas = ExtResource("1_848m6")
+region = Rect2(300, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayoex"]
+atlas = ExtResource("1_848m6")
+region = Rect2(375, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfgjw"]
+atlas = ExtResource("1_848m6")
+region = Rect2(450, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjpsa"]
+atlas = ExtResource("1_848m6")
+region = Rect2(525, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tnws"]
+atlas = ExtResource("1_848m6")
+region = Rect2(600, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg116"]
+atlas = ExtResource("1_848m6")
+region = Rect2(675, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cubav"]
+atlas = ExtResource("1_848m6")
+region = Rect2(750, 0, 75, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_156oj"]
+atlas = ExtResource("1_848m6")
+region = Rect2(825, 0, 75, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbq2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06n2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swden")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptfpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6cq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jnsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayoex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfgjw")
+}],
+"loop": false,
+"name": &"extend",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjpsa")
+}],
+"loop": true,
+"name": &"linger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tnws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg116")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cubav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_156oj")
+}],
+"loop": false,
+"name": &"retract",
+"speed": 10.0
+}]
+
+[node name="laser_beam" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -11.5)
+shape = SubResource("RectangleShape2D_owmdt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gbq2k")
+animation = &"extend"
+frame = 6
+frame_progress = 1.0
