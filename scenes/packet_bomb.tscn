@@ -1,9 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtaob5dbj85c0"]
+[gd_scene load_steps=18 format=3 uid="uid://dtaob5dbj85c0"]
 
 [ext_resource type="Texture2D" uid="uid://drmg6bill34cy" path="res://sprites/packet_bomb.png" id="1_53cox"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7mw1"]
-size = Vector2(68, 64)
+[ext_resource type="Script" path="res://scenes/scripts/packet_bomb.cs" id="1_s1fqj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwkam"]
 atlas = ExtResource("1_53cox")
@@ -85,18 +83,44 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4i5pv")
 }],
-"loop": true,
+"loop": false,
 "name": &"explode",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[node name="packet_bomb" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7mw1"]
+size = Vector2(68, 206.286)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_r7mw1")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei2pe"]
+size = Vector2(54, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wmbu"]
+size = Vector2(128.571, 88.5714)
+
+[node name="packet_bomb" type="CharacterBody2D"]
+script = ExtResource("1_s1fqj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 5
 sprite_frames = SubResource("SpriteFrames_23i46")
 animation = &"explode"
-frame_progress = 0.95719
+
+[node name="trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(0, 71.1429)
+shape = SubResource("RectangleShape2D_r7mw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ei2pe")
+
+[node name="death_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_area"]
+position = Vector2(-2.72478e-06, -4.08718e-06)
+shape = SubResource("RectangleShape2D_7wmbu")
+disabled = true
+debug_color = Color(0.905882, 0.266667, 0.462745, 0.419608)
+
+[connection signal="body_entered" from="trigger" to="." method="_on_area_2d_body_entered"]

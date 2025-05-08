@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqn38ftgf058x"]
+[gd_scene load_steps=8 format=3 uid="uid://bqn38ftgf058x"]
 
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="1_5mr4q"]
 [ext_resource type="PackedScene" uid="uid://bmkf7e3db22sv" path="res://scenes/jump_pad.tscn" id="2_gmv5p"]
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_2rpee"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="4_bai7h"]
+[ext_resource type="PackedScene" uid="uid://cpusdu4jmshm6" path="res://scenes/laser_beam.tscn" id="5_rk2w7"]
+[ext_resource type="PackedScene" uid="uid://d4gmkqm2f6maj" path="res://scenes/admin.tscn" id="6_il4r4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvo4y"]
 size = Vector2(1920, 20)
@@ -27,3 +29,9 @@ position = Vector2(631, 973)
 
 [node name="data_stream" parent="." instance=ExtResource("4_bai7h")]
 position = Vector2(234, 803)
+
+[node name="laser_beam" parent="." instance=ExtResource("5_rk2w7")]
+position = Vector2(1100, 950)
+
+[node name="admin" parent="." instance=ExtResource("6_il4r4")]
+position = Vector2(856, 970)

@@ -12,10 +12,12 @@ public partial class Percy : CharacterBody2D
 	public bool animationBusy = false;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
  	private AnimatedSprite2D animator;
+	private PackedScene packet_bomb_scene;
 
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("animator");
+		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
 	}
 
 	public void flip()
@@ -85,6 +87,12 @@ public partial class Percy : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+
+		if (Input.IsKeyPressed(Godot.Key.E)) {
+			var packet_bomb = packet_bomb_scene.Instantiate() as CharacterBody2D;
+			GetParent().AddChild(packet_bomb);
+			packet_bomb.GlobalPosition = GlobalPosition + new Vector2(0, -1000);
+		}
 	}
 
 	private void _UpdateMovementAnimations(float velocityX)
