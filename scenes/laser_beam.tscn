@@ -138,8 +138,11 @@ script = ExtResource("1_ktblb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -295)
 shape = SubResource("RectangleShape2D_owmdt")
+debug_color = Color(0.917647, 0.243137, 0.4, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5wgux")
 animation = &"retract"
 autoplay = "extend"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

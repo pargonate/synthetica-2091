@@ -1,5 +1,8 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
+
+// [Tool]
 
 public partial class Percy : CharacterBody2D
 {
@@ -11,13 +14,25 @@ public partial class Percy : CharacterBody2D
 	public float jump { get; set; } = 600.0f;
 	public bool animationBusy = false;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	private bool died;
  	private AnimatedSprite2D animator;
 	private PackedScene packet_bomb_scene;
+	private Camera2D camera;
+	private AnimationPlayer death_animator;
+	private Sprite2D top_bar;
+	private Sprite2D bottom_bar;
+	private Label label;
 
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("animator");
+		camera = GetNode<Camera2D>("Camera2D");
 		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
+
+		death_animator = GetNode<AnimationPlayer>("death_animator");
+		top_bar = GetNode<Sprite2D>("top_bar");
+		bottom_bar = GetNode<Sprite2D>("bottom_bar");
+		label = GetNode<Label>("Label");
 	}
 
 	public void flip()
@@ -31,6 +46,10 @@ public partial class Percy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		// top_bar.Visible = false;
+		// bottom_bar.Visible = false;
+		// label.Visible = false;
+
 		Vector2 velocity = Velocity;
 
 		if (!IsOnFloor()) 
@@ -59,7 +78,6 @@ public partial class Percy : CharacterBody2D
 				animator.Play("idle");
 			}
 
-			Camera2D camera = GetNode<Camera2D>("Camera2D");
 			camera.Zoom = new Vector2(1.4f, 1.4f);
 			_UpdateMovementAnimations(velocity.X);
 		}
@@ -110,4 +128,15 @@ public partial class Percy : CharacterBody2D
 		flip();
 	}
 
+	public async void kill()
+	{
+		if (died == false) 
+		{
+			death_animator.Play("death");
+			died = true;
+			await Task.Delay(TimeSpan.FromSeconds(2));
+			QueueFree();
+			
+		}
+	}
 }

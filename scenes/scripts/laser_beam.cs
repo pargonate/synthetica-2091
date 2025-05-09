@@ -45,4 +45,15 @@ public partial class laser_beam : Area2D
 			animator.Play("extend");
 		}
 	}
+
+	private void _on_body_entered(Node body)
+	{
+		if (body is CharacterBody2D character)
+		{
+			if (character is Percy player)
+			{
+				player.kill();
+			}
+		}
+	}
 }

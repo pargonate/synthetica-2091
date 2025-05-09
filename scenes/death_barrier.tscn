@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk3vbi07vqma4"]
+
+[ext_resource type="Script" path="res://scenes/scripts/death_barrier.cs" id="1_a1ly4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5xt3"]
+size = Vector2(200, 75)
+
+[node name="death_barrier" type="Area2D"]
+script = ExtResource("1_a1ly4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e5xt3")
+debug_color = Color(0.941176, 0.203922, 0.341176, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

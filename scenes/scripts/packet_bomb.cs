@@ -35,6 +35,17 @@ public partial class packet_bomb : CharacterBody2D
 		}
 	}
 
+	private void _on_death_area_body_entered(Node body)
+	{
+		if (body is CharacterBody2D character)
+		{
+			if (character is Percy player)
+			{
+				player.kill();	
+			}
+		}
+	}
+
 	private void OnAnimationFinished() 
 	{
 		QueueFree();
