@@ -1,0 +1,408 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwqe4d0axjel8"]
+
+[ext_resource type="Texture2D" uid="uid://b28toajdw6pvu" path="res://level_backgrounds/abell_stars.png" id="1_pwmpv"]
+[ext_resource type="LabelSettings" uid="uid://ci81mtfy6ycgh" path="res://scenes/cinematic.tres" id="2_8f4nq"]
+[ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="2_cobtr"]
+[ext_resource type="AudioStream" uid="uid://ckguru0waip42" path="res://audio/intro.ogg" id="3_k2t8f"]
+[ext_resource type="Texture2D" uid="uid://b2q6n0c7m57p7" path="res://sprites/abell_2218.png" id="4_kwel1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yviuc"]
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8toq2"]
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2qnn2"]
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u1iil"]
+resource_name = "2"
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ms1v"]
+resource_name = "1"
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4igbf"]
+resource_name = "0"
+font = ExtResource("2_cobtr")
+font_size = 125
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
+
+[sub_resource type="Animation" id="Animation_aah3y"]
+resource_name = "appear"
+length = 47.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/0:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.555556), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/1:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6, 10.2, 12.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.5), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/2:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(12.9, 19.8, 22.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.517647), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/3:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(22.7, 27.8, 32.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.566372), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/4:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(32.3, 35.9, 38.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.457627), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/5:label_settings:font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(38.3, 41.9, 43.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.521569), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/6:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(43.5, 47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/Abell Logo:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(43.5, 47),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(964, 1217), Vector2(964, 950)]
+}
+
+[sub_resource type="Animation" id="Animation_fxe7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/0:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/1:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/2:label_settings:font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/3:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/4:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/5:label_settings:font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/6:label_settings:font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/Abell Logo:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(964, 1217)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
+_data = {
+"RESET": SubResource("Animation_fxe7m"),
+"appear": SubResource("Animation_aah3y")
+}
+
+[node name="intro" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(2797, 540)
+texture = ExtResource("1_pwmpv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="6" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -69.0
+offset_right = 188.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WAKE UP."
+label_settings = SubResource("LabelSettings_yviuc")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="5" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -881.0
+offset_top = -138.0
+offset_right = 881.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Purpose. Purpose. How is it found? Can it be lost?"
+label_settings = SubResource("LabelSettings_8toq2")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="4" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -938.5
+offset_top = -293.5
+offset_right = 938.5
+offset_bottom = 293.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Of the complexities, the race doesn't even know where life begins or how it ends, making the \"gift\" even more convoluted."
+label_settings = SubResource("LabelSettings_2qnn2")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -892.0
+offset_top = -282.5
+offset_right = 892.0
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Our origin is unknown; some believe in higher-order [human-like] being(s), or others build their faith on science — a method, not a meaning."
+label_settings = ExtResource("2_8f4nq")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -839.5
+offset_top = -345.0
+offset_right = 839.5
+offset_bottom = 345.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Throughout this journey, you meet other humans, some good, some bad. Some might be your best friend since kindergarten, and some you meet on a random Tuesday."
+label_settings = SubResource("LabelSettings_u1iil")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="1" type="Label" parent="Control"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -945.5
+offset_top = -288.5
+offset_right = 945.5
+offset_bottom = 288.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The goal of life is the pursuit of carrying your name, accomplishing \"dreams,\" and passing your genetic sequences onward."
+label_settings = SubResource("LabelSettings_4ms1v")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="0" type="Label" parent="Control"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -772.5
+offset_top = -209.0
+offset_right = 772.5
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "In the vast, boundless world, it's hard to distinctly evade the facades of reality. "
+label_settings = SubResource("LabelSettings_4igbf")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Abell Logo" type="Sprite2D" parent="Control"]
+position = Vector2(964, 1217)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_kwel1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k2t8f")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "appear"
+libraries = {
+"": SubResource("AnimationLibrary_gnxyv")
+}

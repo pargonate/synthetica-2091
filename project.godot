@@ -14,6 +14,10 @@ config/name="Synthetica 2091"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Storyline="*res://singletons/storyline.cs"
+
 [display]
 
 window/size/viewport_width=1920
