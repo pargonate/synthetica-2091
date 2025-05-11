@@ -4,6 +4,13 @@ using System.Threading.Tasks;
 
 public partial class storyline_trigger : Area2D
 {
+	[ExportGroup("Storyline Properties")]
+	[Export(PropertyHint.Enum, "phase,level")]
+	public string sceneType { get; set; } = "phase";
+
+	[Export]
+	public int sceneNumber { get; set; } = 1;
+
 	[Export]
 	public int line {get; set; } = 0;
 	private storyline storyline;
@@ -27,7 +34,7 @@ public partial class storyline_trigger : Area2D
 				ui = player.GetNode<ui>("UI");
 				var (speaker, text) = storyline.Play(line);
 				ui.ShowLine(speaker, text);
-				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{line}.ogg");
+				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{sceneType}_{sceneNumber}/{line}.ogg");
 				if (line >= 5) 
 				{
 					var id = ui.GetNode<Label>("VBoxContainer/top_bar/Player");
@@ -42,7 +49,7 @@ public partial class storyline_trigger : Area2D
 	{
 		foreach (Node node in GetTree().GetNodesInGroup("speech"))
 		{
-			if (node is AudioStreamPlayer player)
+			if (node is AudioStreamPlayer2D player)
 			{
 				player.Stop();
 				player.Stream = null;

@@ -12,7 +12,7 @@ scale = Vector2(1.48659, 5.13624)
 texture = ExtResource("1_hu4ld")
 
 [node name="Percy" parent="." instance=ExtResource("8_55bho")]
-position = Vector2(861, 303)
+position = Vector2(952, 189)
 jump = 0.05
 
 [node name="storyline_trigger" parent="." instance=ExtResource("2_aeo4g")]
@@ -20,32 +20,32 @@ position = Vector2(1572, 368)
 rotation = 1.5708
 
 [node name="storyline_trigger10" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1483, 7600)
+position = Vector2(1474, 7712)
 rotation = 1.5708
 line = 9
 
 [node name="storyline_trigger9" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1523, 6300)
+position = Vector2(1525, 6611)
 rotation = 1.5708
 line = 8
 
 [node name="storyline_trigger8" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1542, 6100)
+position = Vector2(1533, 6271)
 rotation = 1.5708
 line = 7
 
 [node name="storyline_trigger7" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1532, 4900)
+position = Vector2(1523, 5000)
 rotation = 1.5708
 line = 6
 
 [node name="storyline_trigger6" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1545, 4500)
+position = Vector2(1545, 4559)
 rotation = 1.5708
 line = 5
 
 [node name="storyline_trigger5" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1551, 3000)
+position = Vector2(1551, 3059)
 rotation = 1.5708
 line = 4
 

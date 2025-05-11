@@ -13,7 +13,7 @@ public partial class ui : Control
 		logo = GetNode<TextureRect>("VBoxContainer/bottom_bar/HBoxContainer/logo");
 		line = GetNode<Label>("VBoxContainer/bottom_bar/HBoxContainer/line");
 
-		if (GetParent().SceneFilePath != "phase_1")
+		if (GetParent().GetParent().SceneFilePath != "res://scenes/phase_1.tscn")
 		{
 			id.Text = "Percy";
 		}
