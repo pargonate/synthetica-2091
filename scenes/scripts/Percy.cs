@@ -1,8 +1,7 @@
 using Godot;
 using System;
 using System.Threading.Tasks;
-
-// [Tool]
+using System.Text.RegularExpressions;
 
 public partial class Percy : CharacterBody2D
 {
@@ -15,9 +14,12 @@ public partial class Percy : CharacterBody2D
 	public bool animationBusy = false;
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	private bool died;
+	private string currentScene;
  	private AnimatedSprite2D animator;
 	private PackedScene packet_bomb_scene;
 	private Camera2D camera;
+	private Control ui;
+	private Label debug_y;
 	private AnimationPlayer death_animator;
 	private Sprite2D top_bar;
 	private Sprite2D bottom_bar;
@@ -27,20 +29,42 @@ public partial class Percy : CharacterBody2D
 	{
 		animator = GetNode<AnimatedSprite2D>("animator");
 		camera = GetNode<Camera2D>("Camera2D");
+		ui = GetNode<Control>("UI");
 		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
 
 		death_animator = GetNode<AnimationPlayer>("death_animator");
 		top_bar = GetNode<Sprite2D>("top_bar");
 		bottom_bar = GetNode<Sprite2D>("bottom_bar");
 		label = GetNode<Label>("Label");
+		debug_y = GetNode<Label>("debug_y");
+
+		var match = Regex.Match(GetParent().SceneFilePath, @"phase_(\d+)");
+		GD.Print(match);
+
+		if (match.Success)
+		{
+			currentScene = "phase"; // Extracting the "phase" part explicitly
+			GD.Print(currentScene);
+		}
+		else
+		{
+			GD.PrintErr("Failed to find 'phase' in scene file path");
+		}	
+
 	}
 
-	public void flip()
+	public void flip(float velocityX)
 	{
 		if (Input.IsKeyPressed(Godot.Key.A) || Input.IsKeyPressed(Godot.Key.Left)) {
-			animator.FlipH = true;
+			if (velocityX < 0)
+			{
+				animator.FlipH = true;
+			}
 		} else if (Input.IsKeyPressed(Godot.Key.D) || Input.IsKeyPressed(Godot.Key.Right)) {
-			animator.FlipH = false;
+			if (velocityX > 0)
+			{
+				animator.FlipH = false;
+			}
 		}		
 	}
 
@@ -57,14 +81,21 @@ public partial class Percy : CharacterBody2D
 			if (velocity.Y < 0)
 			{
 				animator.Play("jump");
-				flip();
+				flip(velocity.X);
 			} else
 			{
 				animator.Play("fall");
-				flip();
+				flip(velocity.X);
 			}
 
-			velocity.Y += gravity * (float)delta;
+			if (currentScene == "phase")
+			{
+				velocity.Y = 150f;
+			}
+			else
+			{
+				velocity.Y += gravity * (float)delta;
+			}
 		}
 		else
 		{
@@ -79,30 +110,37 @@ public partial class Percy : CharacterBody2D
 			}
 
 			camera.Zoom = new Vector2(1.4f, 1.4f);
+			ui.Size = new Vector2(2020, 1094);
+			ui.Position = new Vector2(-285, -202);
+			ui.Scale = new Vector2(0.28f, 0.28f);
 			_UpdateMovementAnimations(velocity.X);
 		}
 
 		velocity.X = 0;
 
-		if (Input.IsActionPressed("left"))
+		if (currentScene != "phase")
 		{
-			velocity.X -= walk;
-			if (Input.IsKeyPressed(Godot.Key.Shift))
+			if (Input.IsActionPressed("left"))
 			{
-				velocity.X -= run;
+				velocity.X -= walk;
+				if (Input.IsKeyPressed(Godot.Key.Shift))
+				{
+					velocity.X -= run;
+				}
 			}
-		}
 
-		if (Input.IsActionPressed("right"))
-		{
-			velocity.X = walk;
-
-			if (Input.IsKeyPressed(Godot.Key.Shift))
+			if (Input.IsActionPressed("right"))
 			{
-				velocity.X = run;
-			}
-		}		
+				velocity.X = walk;
 
+				if (Input.IsKeyPressed(Godot.Key.Shift))
+				{
+					velocity.X = run;
+				}
+			}	
+		}	
+
+		debug_y.Text = $"Y-cord: {Position.Y}";
 		Velocity = velocity;
 		MoveAndSlide();
 
@@ -125,7 +163,7 @@ public partial class Percy : CharacterBody2D
 			animator.Play("walk");
 		}
 
-		flip();
+		flip(velocityX);
 	}
 
 	public async void kill()

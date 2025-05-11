@@ -28,7 +28,11 @@ public partial class jump_pad : Area2D
 				}
 
 				Camera2D camera = player.GetNode<Camera2D>("Camera2D");
+				Control ui = player.GetNode<Control>("UI");
 				camera.Zoom = new Vector2(0.8f, 0.8f);
+				ui.Size = new Vector2(1976, 1088);
+				ui.Position = new Vector2(-485, -314);
+				ui.Scale = new Vector2(0.49f, 0.49f);
 			}
 		}
 	}

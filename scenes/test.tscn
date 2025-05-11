@@ -5,21 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://cfxcfsnxhrgsn" path="res://scenes/glitch.tscn" id="3_2rpee"]
 [ext_resource type="PackedScene" uid="uid://blm61cyxuj5ww" path="res://scenes/data_stream.tscn" id="4_bai7h"]
 [ext_resource type="PackedScene" uid="uid://cpusdu4jmshm6" path="res://scenes/laser_beam.tscn" id="5_rk2w7"]
-[ext_resource type="PackedScene" uid="uid://d4gmkqm2f6maj" path="res://scenes/admin.tscn" id="6_il4r4"]
+[ext_resource type="PackedScene" uid="uid://dek03fhky43ms" path="res://scenes/storyline_trigger.tscn" id="7_wngjq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvo4y"]
-size = Vector2(1920, 20)
+size = Vector2(3478, 20)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(960, 1071)
+position = Vector2(1739, 1071)
 shape = SubResource("RectangleShape2D_gvo4y")
 
 [node name="Percy" parent="." instance=ExtResource("1_5mr4q")]
-position = Vector2(969, 978)
+position = Vector2(1661, 1040)
 
 [node name="jump_pad" parent="." instance=ExtResource("2_gmv5p")]
 position = Vector2(1280, 975)
@@ -33,6 +33,13 @@ position = Vector2(234, 803)
 [node name="laser_beam" parent="." instance=ExtResource("5_rk2w7")]
 position = Vector2(1100, 950)
 
-[node name="admin" parent="." instance=ExtResource("6_il4r4")]
-position = Vector2(863, 1057)
-scale = Vector2(3, 3)
+[node name="storyline_trigger3" parent="." instance=ExtResource("7_wngjq")]
+position = Vector2(2032, 322)
+line = 2
+
+[node name="storyline_trigger2" parent="." instance=ExtResource("7_wngjq")]
+position = Vector2(1941, 307)
+line = 1
+
+[node name="storyline_trigger" parent="." instance=ExtResource("7_wngjq")]
+position = Vector2(1850, 297)

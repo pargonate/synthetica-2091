@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://dskwgd12wrnbe"]
+
+[ext_resource type="Script" path="res://scenes/scripts/ui.cs" id="1_nba5q"]
+[ext_resource type="Texture2D" uid="uid://cx66dg16cp44" path="res://sprites/abell_logo.png" id="1_uj874"]
+[ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="2_ao1cw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmrow"]
+font = ExtResource("2_ao1cw")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_54bsa"]
+font = ExtResource("2_ao1cw")
+font_size = 50
+font_color = Color(0.831373, 0.72549, 0.494118, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nba5q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1083.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 807
+
+[node name="top_bar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 1600
+alignment = 1
+
+[node name="Player" type="Label" parent="VBoxContainer/top_bar"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PR7-2.9"
+label_settings = SubResource("LabelSettings_kmrow")
+
+[node name="Level" type="Label" parent="VBoxContainer/top_bar"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEVEL: 1"
+label_settings = SubResource("LabelSettings_kmrow")
+
+[node name="bottom_bar" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1920, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/bottom_bar"]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 51
+alignment = 1
+
+[node name="logo" type="TextureRect" parent="VBoxContainer/bottom_bar/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_uj874")
+expand_mode = 3
+
+[node name="line" type="Label" parent="VBoxContainer/bottom_bar/HBoxContainer"]
+custom_minimum_size = Vector2(1250, 125)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_54bsa")
+vertical_alignment = 1
+autowrap_mode = 3
