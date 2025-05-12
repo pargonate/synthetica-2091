@@ -117,7 +117,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bbdtv")
 }],
-"loop": true,
+"loop": false,
 "name": &"spawn",
 "speed": 5.0
 }]
@@ -133,6 +133,5 @@ disabled = true
 [node name="animator" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_1u4b6")
-animation = &"idle"
+animation = &"spawn"
 autoplay = "idle"
-frame_progress = 0.563748

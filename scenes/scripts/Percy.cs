@@ -43,13 +43,8 @@ public partial class Percy : CharacterBody2D
 
 		if (match.Success)
 		{
-			currentScene = "phase"; // Extracting the "phase" part explicitly
-			GD.Print(currentScene);
+			currentScene = "phase";
 		}
-		else
-		{
-			GD.PrintErr("Failed to find 'phase' in scene file path");
-		}	
 
 	}
 
@@ -140,7 +135,7 @@ public partial class Percy : CharacterBody2D
 			}	
 		}	
 
-		debug_y.Text = $"Y-cord: {Position.Y}";
+		debug_y.Text = $"Y-cord: {Math.Round(Position.Y, 0)}";
 		Velocity = velocity;
 		MoveAndSlide();
 

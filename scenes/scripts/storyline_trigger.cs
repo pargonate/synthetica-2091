@@ -32,10 +32,10 @@ public partial class storyline_trigger : Area2D
 			{
 				StopSpeech();
 				ui = player.GetNode<ui>("UI");
-				var (speaker, text) = storyline.Play(line);
+				var (classification, speaker, text) = storyline.Play($"{sceneType}_{sceneNumber}", line);
 				ui.ShowLine(speaker, text);
 				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{sceneType}_{sceneNumber}/{line}.ogg");
-				if (line >= 5) 
+				if (line >= 5 && sceneType == "phase" && sceneNumber == 1) 
 				{
 					var id = ui.GetNode<Label>("VBoxContainer/top_bar/Player");
 					id.Text = "Percy";

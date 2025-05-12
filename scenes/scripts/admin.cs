@@ -12,6 +12,7 @@ public partial class admin : CharacterBody2D
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("animator");
+		animator.AnimationFinished += OnAnimationFinished;
 		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
 		spawnTimer = new Timer();
 		spawnTimer.WaitTime = 5.0f;
@@ -23,10 +24,24 @@ public partial class admin : CharacterBody2D
 
 	private void OnSpawnTimerTimeOut()
 	{
-		for (int i = 0; i < 30; i++)
+		for (int i = 0; i < 15; i++)
 		{
-			SpawnPacketBomb(-3500, 3500, -200, 20);
+			if (GetParent().SceneFilePath == "res://scenes/level_3.tscn")
+			{
+				SpawnPacketBomb(-1495, 17200, -150, -125);
+			}
+			else
+			{
+				SpawnPacketBomb(-3500, 3500, -1000, -999);
+			}
 		}
+
+		animator.Play("spawn");
+	}
+
+	private void OnAnimationFinished()
+	{
+		animator.Play("idle");
 	}
 
 	public void SpawnPacketBomb(float minX, float maxX, float minY, float maxY)

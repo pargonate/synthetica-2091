@@ -11,6 +11,7 @@ public partial class storyline : Node
 
 	private class Line
 	{
+		public string Classification;
 		public string Speaker;
 		public string Text;
 	}
@@ -42,10 +43,11 @@ public partial class storyline : Node
 		foreach (var entry in array)
 		{
 			var dict = entry.As<Dictionary>();
-			if (dict != null && dict.ContainsKey("speaker") && dict.ContainsKey("line"))
+			if (dict != null && dict.ContainsKey("classification") && dict.ContainsKey("speaker") && dict.ContainsKey("line"))
 			{
 				var line = new Line
 				{
+					Classification = dict["classification"].ToString(),
 					Speaker = dict["speaker"].ToString(),
 					Text = dict["line"].ToString()
 				};
@@ -54,19 +56,21 @@ public partial class storyline : Node
 		}
 	}
 
-	public (string, string) Play(int index)
+	public (string, string, string) Play(string classification, int index)
 	{
-		if (index < lines.Count)
+		var filteredLines = lines.FindAll(line => line.Classification == classification);
+
+		if (index < filteredLines.Count)
 		{
-			var line = lines[index];
-			return (line.Speaker, line.Text);
+			var line = filteredLines[index];
+			return (line.Classification, line.Speaker, line.Text);
 		}
 		else
 		{
-			GD.Print("End of storyline.");
+			GD.Print($"End of storyline for classification: {classification}.");
 		}
 
-		return ("", "");
+		return ("", "", "");
 	}
 
 	public override void _Ready()

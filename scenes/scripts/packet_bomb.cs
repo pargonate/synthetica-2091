@@ -29,7 +29,7 @@ public partial class packet_bomb : CharacterBody2D
 
 	private void _on_area_2d_body_entered(Node body)
 	{
-		if (body is StaticBody2D floor) 
+		if (body is StaticBody2D || (body is TileMap)) 
 		{
 			animator.Play("explode");
 		}
@@ -41,7 +41,10 @@ public partial class packet_bomb : CharacterBody2D
 		{
 			if (character is Percy player)
 			{
-				player.kill();	
+				if (animator.IsPlaying() == true)
+				{
+					player.kill();	
+				}
 			}
 		}
 	}
