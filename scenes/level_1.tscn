@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g1hqk46c2njo"]
+[gd_scene load_steps=18 format=3 uid="uid://g1hqk46c2njo"]
 
 [ext_resource type="Texture2D" uid="uid://o10k0i80qn1w" path="res://level_backgrounds/level_1.png" id="1_x6mvy"]
 [ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="2_vxgxp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bk3vbi07vqma4" path="res://scenes/death_barrier.tscn" id="6_5666o"]
 [ext_resource type="PackedScene" uid="uid://b5lqcr0y3prj8" path="res://scenes/data_teleporter.tscn" id="7_2lqt4"]
 [ext_resource type="PackedScene" uid="uid://dek03fhky43ms" path="res://scenes/storyline_trigger.tscn" id="9_qgfe5"]
+[ext_resource type="PackedScene" uid="uid://cfyla2nru50m0" path="res://scenes/firewall.tscn" id="10_8tf28"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emwy4"]
 resource_name = "floor"
@@ -151,3 +152,7 @@ line = 1
 [node name="storyline_trigger" parent="." instance=ExtResource("9_qgfe5")]
 position = Vector2(101.311, -314.223)
 sceneType = "level"
+
+[node name="firewall" parent="." instance=ExtResource("10_8tf28")]
+position = Vector2(-3445.73, -784.444)
+scale = Vector2(5, 5)

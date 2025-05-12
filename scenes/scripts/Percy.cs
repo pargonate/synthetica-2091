@@ -24,6 +24,7 @@ public partial class Percy : CharacterBody2D
 	private Sprite2D top_bar;
 	private Sprite2D bottom_bar;
 	private Label label;
+	private AudioStreamPlayer2D audioPlayer;
 
 	public override void _Ready()
 	{
@@ -37,6 +38,7 @@ public partial class Percy : CharacterBody2D
 		bottom_bar = GetNode<Sprite2D>("bottom_bar");
 		label = GetNode<Label>("Label");
 		debug_y = GetNode<Label>("debug_y");
+		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
 		var match = Regex.Match(GetParent().SceneFilePath, @"phase_(\d+)");
 		GD.Print(match);
@@ -65,10 +67,6 @@ public partial class Percy : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		// top_bar.Visible = false;
-		// bottom_bar.Visible = false;
-		// label.Visible = false;
-
 		Vector2 velocity = Velocity;
 
 		if (!IsOnFloor()) 
@@ -166,10 +164,21 @@ public partial class Percy : CharacterBody2D
 		if (died == false) 
 		{
 			death_animator.Play("death");
+
+			foreach (Node node in GetTree().GetNodesInGroup("speech"))
+			{
+				if (node is AudioStreamPlayer2D player)
+				{
+					player.Stop();
+					player.Stream = null;
+					player.Seek(-1);
+				}
+			}
+
+			audioPlayer.Play();
 			died = true;
 			await Task.Delay(TimeSpan.FromSeconds(2));
-			QueueFree();
-			
+			GetTree().ChangeSceneToFile(GetParent().SceneFilePath);
 		}
 	}
 }

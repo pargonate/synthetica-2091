@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 public partial class data_teleporter : Area2D
 {
 	private string currentScene;
-	private int nextSceneNumber;
+	// private int nextSceneNumber;
 	private string nextScene;
 
 	public void _on_body_entered(Node body)
@@ -15,18 +15,32 @@ public partial class data_teleporter : Area2D
 			if (character is Percy)
 			{
 				currentScene = GetTree().CurrentScene.SceneFilePath;
-				var match = Regex.Match(currentScene, @"_(\d+)");
-
-				if (match.Success)
+				if (currentScene == "res://scenes/phase_1.tscn")
 				{
-					nextSceneNumber = Convert.ToInt32(match.Groups[1].Value) + 1;
+					nextScene = "level_1";
 				}
-				else
+				else if (currentScene == "res://scenes/level_1.tscn")
 				{
-					GD.PrintErr("Failed to find number value in scene file path");
+					nextScene = "phase_2";
+				}
+				else if (currentScene == "res://scenes/phase_2.tscn")
+				{
+					nextScene = "level_2";
+				}
+				else if (currentScene == "res://scenes/level_2.tscn")
+				{
+					nextScene = "phase_3";
+				}
+				else if (currentScene == "res://scenes/phase_3.tscn")
+				{
+					nextScene = "level_3";
+				}
+				else if (currentScene == "res://scenes/level_3.tscn")
+				{
+					nextScene = "end";
 				}
 
-				GetTree().ChangeSceneToFile("res://scenes/level_" + nextSceneNumber + ".tscn");
+				GetTree().ChangeSceneToFile($"res://scenes/{nextScene}.tscn");
 			}
 		}
 	}

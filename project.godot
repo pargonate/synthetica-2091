@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Synthetica 2091"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

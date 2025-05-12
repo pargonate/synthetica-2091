@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://h5qad2s6di7w"]
+[gd_scene load_steps=35 format=3 uid="uid://h5qad2s6di7w"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Percy.cs" id="1_k08hw"]
 [ext_resource type="Texture2D" uid="uid://bgsup5l88pavy" path="res://sprites/PR7-2.9.png" id="1_ryrn4"]
 [ext_resource type="Texture2D" uid="uid://d37ro0uwfftpu" path="res://sprites/black_bar.png" id="3_ldxtj"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="4_8u6td"]
 [ext_resource type="PackedScene" uid="uid://dskwgd12wrnbe" path="res://scenes/ui.tscn" id="5_ygci6"]
+[ext_resource type="AudioStream" uid="uid://c5eagbd4r6n50" path="res://audio/terminated.ogg" id="6_l2yj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vd"]
 size = Vector2(7, 59)
@@ -184,6 +185,15 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_a14vo"]
+font = ExtResource("4_8u6td")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kgop"]
+font = ExtResource("4_8u6td")
+font_size = 125
+font_color = Color(0.862745, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_ill8m"]
 length = 0.001
 tracks/0/type = "value"
@@ -342,15 +352,6 @@ _data = {
 "death": SubResource("Animation_ei1qq")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_a14vo"]
-font = ExtResource("4_8u6td")
-font_size = 40
-
-[sub_resource type="LabelSettings" id="LabelSettings_3kgop"]
-font = ExtResource("4_8u6td")
-font_size = 125
-font_color = Color(0.862745, 0, 0, 1)
-
 [node name="Percy" type="CharacterBody2D"]
 position = Vector2(561, 574)
 scale = Vector2(2.42651, 2.47933)
@@ -372,6 +373,26 @@ position = Vector2(0, -49.2)
 scale = Vector2(1.00538, 1)
 zoom = Vector2(1.4, 1.4)
 
+[node name="debug_y" type="Label" parent="."]
+visible = false
+texture_filter = 4
+offset_left = -128.992
+offset_top = -114.144
+offset_right = 150.008
+offset_bottom = -67.1437
+text = "Y-cord: "
+label_settings = SubResource("LabelSettings_a14vo")
+
+[node name="UI" parent="." instance=ExtResource("5_ygci6")]
+offset_left = -285.0
+offset_top = -202.0
+offset_right = 1735.0
+offset_bottom = 892.0
+scale = Vector2(0.28, 0.28)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_l2yj2")
+
 [node name="bottom_bar" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(7.41806, 74.2136)
@@ -384,20 +405,6 @@ position = Vector2(-1.64844, -306.131)
 scale = Vector2(3.28244, 1.00863)
 texture = ExtResource("3_ldxtj")
 
-[node name="death_animator" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_77woc")
-}
-
-[node name="debug_y" type="Label" parent="."]
-texture_filter = 4
-offset_left = -128.992
-offset_top = -114.144
-offset_right = 150.008
-offset_bottom = -67.1437
-text = "Y-cord: "
-label_settings = SubResource("LabelSettings_a14vo")
-
 [node name="Label" type="Label" parent="."]
 visible = false
 texture_filter = 4
@@ -407,9 +414,7 @@ offset_right = 257.265
 offset_bottom = 29.9063
 label_settings = SubResource("LabelSettings_3kgop")
 
-[node name="UI" parent="." instance=ExtResource("5_ygci6")]
-offset_left = -285.0
-offset_top = -202.0
-offset_right = 1735.0
-offset_bottom = 892.0
-scale = Vector2(0.28, 0.28)
+[node name="death_animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_77woc")
+}

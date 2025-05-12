@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv18grumoju1r"]
+[gd_scene load_steps=5 format=3 uid="uid://dv18grumoju1r"]
 
 [ext_resource type="Texture2D" uid="uid://b236x4koju7d" path="res://level_backgrounds/stars.png" id="1_hu4ld"]
 [ext_resource type="PackedScene" uid="uid://dek03fhky43ms" path="res://scenes/storyline_trigger.tscn" id="2_aeo4g"]
+[ext_resource type="PackedScene" uid="uid://b5lqcr0y3prj8" path="res://scenes/data_teleporter.tscn" id="4_w158a"]
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="8_55bho"]
 
 [node name="phase_1" type="Node2D"]
@@ -63,3 +64,6 @@ line = 1
 position = Vector2(1573, 1900)
 rotation = 1.5708
 line = 2
+
+[node name="data_teleporter" parent="." instance=ExtResource("4_w158a")]
+position = Vector2(871, 8623)

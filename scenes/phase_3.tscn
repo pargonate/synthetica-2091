@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtgbdwhc68v1b"]
+[gd_scene load_steps=5 format=3 uid="uid://dtgbdwhc68v1b"]
 
 [ext_resource type="Texture2D" uid="uid://b236x4koju7d" path="res://level_backgrounds/stars.png" id="1_81ute"]
 [ext_resource type="PackedScene" uid="uid://h5qad2s6di7w" path="res://scenes/percy.tscn" id="2_jdnpi"]
 [ext_resource type="PackedScene" uid="uid://dek03fhky43ms" path="res://scenes/storyline_trigger.tscn" id="3_765ic"]
+[ext_resource type="PackedScene" uid="uid://b5lqcr0y3prj8" path="res://scenes/data_teleporter.tscn" id="4_22qo7"]
 
 [node name="phase_3" type="Node2D"]
 
@@ -12,7 +13,7 @@ scale = Vector2(1.48659, 6.36574)
 texture = ExtResource("1_81ute")
 
 [node name="Percy" parent="." instance=ExtResource("2_jdnpi")]
-position = Vector2(1327, 8734)
+position = Vector2(920, 206)
 jump = 0.05
 
 [node name="storyline_trigger15" parent="." instance=ExtResource("3_765ic")]
@@ -103,3 +104,6 @@ line = 1
 position = Vector2(1572, 368)
 rotation = 1.5708
 sceneNumber = 3
+
+[node name="data_teleporter" parent="." instance=ExtResource("4_22qo7")]
+position = Vector2(875, 10408)

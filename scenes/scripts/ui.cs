@@ -1,24 +1,45 @@
 using Godot;
 using System;
+using System.Text.RegularExpressions;
 
 public partial class ui : Control
 {
 	private Label id;
 	private TextureRect logo;
 	private Label line;
+	private Label level;
 
 	public override void _Ready()
 	{
 		id = GetNode<Label>("VBoxContainer/top_bar/Player");
 		logo = GetNode<TextureRect>("VBoxContainer/bottom_bar/HBoxContainer/logo");
 		line = GetNode<Label>("VBoxContainer/bottom_bar/HBoxContainer/line");
+		level = GetNode<Label>("VBoxContainer/top_bar/Level"); 
 
-		if (GetParent().GetParent().SceneFilePath != "res://scenes/phase_1.tscn")
+		var sceneFilePath = GetParent().GetParent().SceneFilePath;
+		var match = Regex.Match(sceneFilePath, @"res://scenes/(?<sceneType>\w+)_(?<sceneNumber>\d+).tscn");
+		if (match.Success)
+		{
+			var sceneType = match.Groups["sceneType"].Value;
+			var sceneNumber = match.Groups["sceneNumber"].Value;
+
+			if (sceneType == "level")
+			{
+				sceneType = "Level";
+			}
+			else if (sceneType == "phase")
+			{
+				sceneType = "Phase";
+			}
+
+			level.Text = $"{sceneType}: {sceneNumber}";
+		}
+
+		if (sceneFilePath != "res://scenes/phase_1.tscn")
 		{
 			id.Text = "Percy";
 		}
 	}
-
 
 	public void ShowLine(string speaker, string text)
 	{
