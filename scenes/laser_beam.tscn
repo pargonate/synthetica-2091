@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cpusdu4jmshm6"]
+[gd_scene load_steps=31 format=3 uid="uid://cpusdu4jmshm6"]
 
 [ext_resource type="Texture2D" uid="uid://dp7rh3f44krj3" path="res://sprites/laser_beam.png" id="1_848m6"]
 [ext_resource type="Script" path="res://scenes/scripts/laser_beam.cs" id="1_ktblb"]
+[ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="3_tdeyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owmdt"]
 size = Vector2(60, 10)
@@ -131,18 +132,89 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iwc0"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(0, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gadn"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(200, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojg5w"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(400, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qop7w"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(600, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oq23"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(800, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk5ks"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(1000, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ayu"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(1200, 0, 200, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c86wh"]
+atlas = ExtResource("3_tdeyd")
+region = Rect2(1400, 0, 200, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7skld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iwc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gadn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojg5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qop7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oq23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk5ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ayu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c86wh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="laser_beam" type="Area2D"]
 position = Vector2(-2, 261)
 script = ExtResource("1_ktblb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="death_collider" type="CollisionShape2D" parent="."]
 position = Vector2(2, -295)
 shape = SubResource("RectangleShape2D_owmdt")
 debug_color = Color(0.917647, 0.243137, 0.4, 0.419608)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="beam" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5wgux")
 animation = &"retract"
 autoplay = "extend"
+
+[node name="base" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -338)
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_7skld")
+animation = &"idle"
+frame_progress = 0.477493
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

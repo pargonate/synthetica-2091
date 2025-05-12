@@ -31,6 +31,10 @@ public partial class storyline_trigger : Area2D
 			if (character is Percy player)
 			{
 				StopSpeech();
+				if (sceneType == "phase")
+				{
+					player.disable();
+				}
 				ui = player.GetNode<ui>("UI");
 				var (classification, speaker, text) = storyline.Play($"{sceneType}_{sceneNumber}", line);
 				ui.ShowLine(speaker, text);

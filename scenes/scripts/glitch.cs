@@ -31,17 +31,26 @@ public partial class glitch : Area2D
 	}
 
 	private async void OnAnimationFinished() 
+	//	Once the break animation has finished,
+	//	we disable the collision, making it an 
+	//	empty platform. Reenabled after 2 seconds.
 	{
 		if (animator.Animation == "break") 
 		{
 			collision.Disabled = true;
 			await Task.Delay(TimeSpan.FromSeconds(2));
-			animator.Play("replenish");
+			if (IsInstanceValid(animator))
+			{
+				animator.Play("replenish");
+			}
 		} 
 		else if (animator.Animation == "replenish")
 		{
 			collision.Disabled = false;
-			animator.Play("idle");
+			if (IsInstanceValid(animator))
+			{
+				animator.Play("idle");
+			}
 		}
 	}
 }

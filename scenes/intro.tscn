@@ -125,6 +125,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aah3y"]
 resource_name = "appear"
@@ -136,7 +148,7 @@ tracks/0/path = NodePath("Control/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(42.7, 46.2),
+"times": PackedFloat32Array(45, 46.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1)]
@@ -160,7 +172,7 @@ tracks/2/path = NodePath("Control/5:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(36.4, 40.2, 42.6),
+"times": PackedFloat32Array(36.2, 40.9, 45),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.521569), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -184,7 +196,7 @@ tracks/4/path = NodePath("Control/4:label_settings:font_color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(32, 34.2, 36.3),
+"times": PackedFloat32Array(31.5, 33.6, 36),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.457627), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -208,10 +220,22 @@ tracks/6/path = NodePath("Control/3:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(28, 30.3, 31.9),
+"times": PackedFloat32Array(28, 29.8, 31.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.566372), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(16.2, 22.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]

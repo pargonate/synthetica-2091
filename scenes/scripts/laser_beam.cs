@@ -7,16 +7,18 @@ public partial class laser_beam : Area2D
 	private AnimatedSprite2D animator;
 	private CollisionShape2D beam;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		animator = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		beam = GetNode<CollisionShape2D>("CollisionShape2D");
+		animator = GetNode<AnimatedSprite2D>("beam");
+		beam = GetNode<CollisionShape2D>("death_collider");
 		ChangeBeamCollision(600, 0.8f);
 		animator.AnimationFinished += OnAnimationFinished; 
 	}
 
 	private void ChangeBeamCollision(float y, float duration)
+	//	To change the beam height, we have to follow the collider
+	//	with the animation. This is done through tween-ing, the values
+	//	and setting new vectors based on the new size. 
 	{
 
 		if (beam.Shape is RectangleShape2D rectangleShape) {
@@ -31,16 +33,18 @@ public partial class laser_beam : Area2D
 	}
 
 	private async void OnAnimationFinished() 
+	//	Once the beam has finished staying extended,
+	//	it'll start retracting.
 	{
 		if (animator.Animation == "extend")
 		{
-			await Task.Delay(TimeSpan.FromSeconds(5));
+			await Task.Delay(TimeSpan.FromSeconds(2));
 			animator.Play("retract");
 			ChangeBeamCollision(0, 0.6f);
 		}
 		else if (animator.Animation == "retract")
 		{
-			await Task.Delay(TimeSpan.FromSeconds(5));
+			await Task.Delay(TimeSpan.FromSeconds(2));
 			ChangeBeamCollision(600, 0.8f);
 			animator.Play("extend");
 		}

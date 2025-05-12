@@ -1,17 +1,31 @@
-[gd_scene load_steps=17 format=3 uid="uid://dssmrxcxb744h"]
+[gd_scene load_steps=21 format=3 uid="uid://dssmrxcxb744h"]
 
 [ext_resource type="Texture2D" uid="uid://dgprj04l2k3cs" path="res://level_backgrounds/credits.png" id="1_s7xh3"]
+[ext_resource type="Script" path="res://scenes/scripts/end.cs" id="1_wymr0"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="2_s68h6"]
 [ext_resource type="LabelSettings" uid="uid://ci81mtfy6ycgh" path="res://scenes/cinematic.tres" id="3_0xe6r"]
 [ext_resource type="Texture2D" uid="uid://dyutxmlfx6oym" path="res://sprites/logo.png" id="4_45dir"]
+[ext_resource type="Texture2D" uid="uid://d37ro0uwfftpu" path="res://sprites/black_bar.png" id="5_2qkno"]
 [ext_resource type="AudioStream" uid="uid://b7ci8uii2kf15" path="res://audio/credits.ogg" id="5_u5ie8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq503"]
-size = Vector2(1915, 21)
+[sub_resource type="LabelSettings" id="LabelSettings_0wlkp"]
+font = ExtResource("2_s68h6")
+font_size = 100
+font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_leg68"]
+font = ExtResource("2_s68h6")
+font_size = 75
+
+[sub_resource type="LabelSettings" id="LabelSettings_du2fc"]
+line_spacing = 20.0
+font = ExtResource("2_s68h6")
+font_size = 50
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nwgyy"]
 font = ExtResource("2_s68h6")
-font_size = 125
+font_size = 75
 font_color = Color(0.831373, 0.72549, 0.494118, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rqbgr"]
@@ -22,13 +36,13 @@ font_color = Color(0.831373, 0.72549, 0.494118, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_622xp"]
 font = ExtResource("2_s68h6")
 font_size = 125
-font_color = Color(0.831373, 0.72549, 0.494118, 1)
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bj1vu"]
 resource_name = "2"
 font = ExtResource("2_s68h6")
 font_size = 75
-font_color = Color(0.831373, 0.72549, 0.494118, 1)
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ga8w0"]
 resource_name = "1"
@@ -46,7 +60,7 @@ font_color = Color(0.831373, 0.72549, 0.494118, 0)
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("Control/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -102,7 +116,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.831373, 0.72549, 0.494118, 1)]
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -114,7 +128,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.831373, 0.72549, 0.494118, 1)]
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -128,10 +142,82 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/7:label_settings:font_color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/8:label_settings:font_color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/10:label_settings:font_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("background:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("black_background:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aah3y"]
 resource_name = "appear"
-length = 47.0
+length = 100.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -139,10 +225,10 @@ tracks/0/path = NodePath("Control/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(42.7, 46.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(45, 46.6, 48),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1)]
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -163,7 +249,7 @@ tracks/2/path = NodePath("Control/5:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(36.4, 40.2, 42.6),
+"times": PackedFloat32Array(36.2, 40.9, 45),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.521569), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -187,7 +273,7 @@ tracks/4/path = NodePath("Control/4:label_settings:font_color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(32, 34.2, 36.3),
+"times": PackedFloat32Array(31.5, 33.6, 36),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.457627), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -211,10 +297,82 @@ tracks/6/path = NodePath("Control/3:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(28, 30.3, 31.9),
+"times": PackedFloat32Array(28, 29.8, 31.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.566372), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(16.2, 22.2, 90.4, 100),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/7:label_settings:font_color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(48, 54.3, 60.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/8:label_settings:font_color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(60.4, 66.7, 71.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/10:label_settings:font_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(71.9, 77.8, 90.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("background:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(90.4, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("black_background:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(71.8, 99.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
@@ -223,23 +381,29 @@ _data = {
 "appear": SubResource("Animation_aah3y")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_teebp"]
-font = ExtResource("2_s68h6")
-font_size = 100
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf243"]
+size = Vector2(140, 3100)
 
 [node name="end" type="Node2D"]
 position = Vector2(967, 588)
+script = ExtResource("1_wymr0")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(-967, -588)
+anchor_mode = 0
+enabled = false
+zoom = Vector2(0.5, 0.5)
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(-6.99991, -47.9999)
 scale = Vector2(1, 0.54)
 texture = ExtResource("1_s7xh3")
 
-[node name="trigger" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
-position = Vector2(1.5, 0.5)
-shape = SubResource("RectangleShape2D_pq503")
+[node name="black_background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-29.4999, -53.5)
+scale = Vector2(5.0175, 5.755)
+texture = ExtResource("5_2qkno")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -248,6 +412,73 @@ offset_left = -951.0
 offset_top = -542.0
 offset_right = 969.0
 offset_bottom = 538.0
+metadata/_edit_use_anchors_ = true
+
+[node name="10" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = -187.5
+offset_right = 514.0
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "© & ™ Nathan Parker.
+All rights reserved."
+label_settings = SubResource("LabelSettings_0wlkp")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = -187.5
+offset_right = 514.0
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Check out the full story and how Nathan is doing at:
+
+ncp.dev"
+label_settings = SubResource("LabelSettings_leg68")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="7" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = -69.0
+offset_right = 514.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Developer, Artist, Writer: Nathan Parker
+Font: Sarah Cadigan-Fried (Jersey-10)
+
+Final Level Music: FrankJavCee 
+(Simpsonwave1995 - Slowed + Reverbed)"
+label_settings = SubResource("LabelSettings_du2fc")
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="6" type="Label" parent="Control"]
@@ -355,11 +586,11 @@ metadata/_edit_use_anchors_ = true
 [node name="1" type="Label" parent="Control"]
 texture_filter = 4
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.484115
+anchor_top = 0.224537
+anchor_right = 0.50026
+anchor_bottom = 0.690278
 offset_left = -945.5
 offset_top = -288.5
 offset_right = 945.5
@@ -397,32 +628,26 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "appear"
+[node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_gnxyv")
 }
 
 [node name="logo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -398)
 scale = Vector2(2, 2)
 texture = ExtResource("4_45dir")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -529.0
-offset_right = 530.0
-offset_bottom = 555.0
-text = "Developer: Nathan Parker
-Artist: Nathan Parker
-Storyline: Nathan Parker
-
-Final Level Music: FrankJavCee"
-label_settings = SubResource("LabelSettings_teebp")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="credits" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_u5ie8")
-autoplay = true
+
+[node name="end_trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end_trigger"]
+position = Vector2(3, 313)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tf243")
+debug_color = Color(0, 0.631373, 0.443137, 0.419608)
+
+[connection signal="body_entered" from="end_trigger" to="." method="_on_end_trigger_body_entered"]

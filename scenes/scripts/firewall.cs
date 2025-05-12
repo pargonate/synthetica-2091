@@ -40,7 +40,14 @@ public partial class firewall : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		velocity.X = universalMove;
+		if (Position.X < 16100.0f)
+		{
+			velocity.X = universalMove;
+		}
+		else
+		{
+			velocity.X = 0.0f;
+		}
 
 		Velocity = velocity;
 		MoveAndSlide();

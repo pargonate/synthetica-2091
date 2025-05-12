@@ -25,6 +25,8 @@ public partial class Percy : CharacterBody2D
 	private Sprite2D bottom_bar;
 	private Label label;
 	private AudioStreamPlayer2D audioPlayer;
+	private bool disabled_movement = false;
+	private bool stop_movement = false;
 
 	public override void _Ready()
 	{
@@ -39,15 +41,6 @@ public partial class Percy : CharacterBody2D
 		label = GetNode<Label>("Label");
 		debug_y = GetNode<Label>("debug_y");
 		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
-
-		var match = Regex.Match(GetParent().SceneFilePath, @"phase_(\d+)");
-		GD.Print(match);
-
-		if (match.Success)
-		{
-			currentScene = "phase";
-		}
-
 	}
 
 	public void flip(float velocityX)
@@ -71,23 +64,26 @@ public partial class Percy : CharacterBody2D
 
 		if (!IsOnFloor()) 
 		{
-			if (velocity.Y < 0)
+			if (stop_movement == false)
 			{
-				animator.Play("jump");
-				flip(velocity.X);
-			} else
-			{
-				animator.Play("fall");
-				flip(velocity.X);
-			}
+				if (velocity.Y < 0)
+				{
+					animator.Play("jump");
+					flip(velocity.X);
+				} else
+				{
+					animator.Play("fall");
+					flip(velocity.X);
+				}
 
-			if (currentScene == "phase")
-			{
-				velocity.Y = 150f;
-			}
-			else
-			{
-				velocity.Y += gravity * (float)delta;
+				if (currentScene == "phase")
+				{
+					velocity.Y = 150f;
+				}
+				else
+				{
+					velocity.Y += gravity * (float)delta;
+				}
 			}
 		}
 		else
@@ -111,7 +107,7 @@ public partial class Percy : CharacterBody2D
 
 		velocity.X = 0;
 
-		if (currentScene != "phase")
+		if (disabled_movement == false)
 		{
 			if (Input.IsActionPressed("left"))
 			{
@@ -134,8 +130,11 @@ public partial class Percy : CharacterBody2D
 		}	
 
 		debug_y.Text = $"Y-cord: {Math.Round(Position.Y, 0)}";
-		Velocity = velocity;
-		MoveAndSlide();
+		if (stop_movement == false)
+		{
+			Velocity = velocity;
+			MoveAndSlide();
+		}
 
 		if (Input.IsKeyPressed(Godot.Key.E)) {
 			var packet_bomb = packet_bomb_scene.Instantiate() as CharacterBody2D;
@@ -180,5 +179,21 @@ public partial class Percy : CharacterBody2D
 			await Task.Delay(TimeSpan.FromSeconds(2));
 			GetTree().ChangeSceneToFile(GetParent().SceneFilePath);
 		}
+	}
+
+	public void disable()
+	{
+		disabled_movement = true;
+	}
+
+	public void stop()
+	{
+		stop_movement = true;
+	}
+
+	public void adjustUI()
+	{
+		ui.QueueFree();
+		camera.Zoom = new Vector2(0.5f, 0.5f);
 	}
 }
