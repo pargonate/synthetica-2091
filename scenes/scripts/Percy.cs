@@ -5,16 +5,7 @@ using System.Text.RegularExpressions;
 
 public partial class Percy : CharacterBody2D
 {
-	[Export]
-	public float walk { get; set; } = 200.0f;
-	[Export]
-	public float run { get; set; } = 500.0f;
-	[Export]
-	public float jump { get; set; } = 600.0f;
-	public bool animationBusy = false;
-	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
-	private bool died;
-	private string currentScene;
+	// Nodes
  	private AnimatedSprite2D animator;
 	private PackedScene packet_bomb_scene;
 	private Camera2D camera;
@@ -25,6 +16,19 @@ public partial class Percy : CharacterBody2D
 	private Sprite2D bottom_bar;
 	private Label label;
 	private AudioStreamPlayer2D audioPlayer;
+
+	// Variables
+	[Export]
+	public float walk { get; set; } = 200.0f;
+	[Export]
+	public float run { get; set; } = 500.0f;
+	[Export]
+	public float jump { get; set; } = 600.0f;
+	[Export]
+	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	public bool animationBusy = false;
+	private bool died;
+	private bool lowGravity = false;
 	private bool disabled_movement = false;
 	private bool stop_movement = false;
 
@@ -76,9 +80,9 @@ public partial class Percy : CharacterBody2D
 					flip(velocity.X);
 				}
 
-				if (currentScene == "phase")
+				if (lowGravity == true)
 				{
-					velocity.Y = 150f;
+					velocity.Y = gravity;
 				}
 				else
 				{
@@ -189,6 +193,11 @@ public partial class Percy : CharacterBody2D
 	public void stop()
 	{
 		stop_movement = true;
+	}
+
+	public void slowFall()
+	{
+		lowGravity = true;
 	}
 
 	public void adjustUI()

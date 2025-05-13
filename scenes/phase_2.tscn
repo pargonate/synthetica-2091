@@ -14,93 +14,96 @@ texture = ExtResource("1_lu2gi")
 
 [node name="Percy" parent="." instance=ExtResource("2_a11d2")]
 position = Vector2(910, 156)
-jump = 0.05
+scale = Vector2(2.427, 2.479)
+gravity = 150.0
 
-[node name="storyline_trigger15" parent="." instance=ExtResource("3_5ub1k")]
+[node name="storyline_triggers" type="Node2D" parent="."]
+
+[node name="14" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1551, 9400)
 rotation = 1.5708
 sceneNumber = 2
 line = 14
 
-[node name="storyline_trigger14" parent="." instance=ExtResource("3_5ub1k")]
+[node name="13" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1538, 9025)
 rotation = 1.5708
 sceneNumber = 2
 line = 13
 
-[node name="storyline_trigger13" parent="." instance=ExtResource("3_5ub1k")]
+[node name="12" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1543, 7925)
 rotation = 1.5708
 sceneNumber = 2
 line = 12
 
-[node name="storyline_trigger12" parent="." instance=ExtResource("3_5ub1k")]
+[node name="11" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1541, 5700)
 rotation = 1.5708
 sceneNumber = 2
 line = 11
 
-[node name="storyline_trigger11" parent="." instance=ExtResource("3_5ub1k")]
+[node name="10" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1553, 4500)
 rotation = 1.5708
 sceneNumber = 2
 line = 10
 
-[node name="storyline_trigger10" parent="." instance=ExtResource("3_5ub1k")]
+[node name="9" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1546, 4225)
 rotation = 1.5708
 sceneNumber = 2
 line = 9
 
-[node name="storyline_trigger9" parent="." instance=ExtResource("3_5ub1k")]
+[node name="8" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1467, 3675)
 rotation = 1.5708
 sceneNumber = 2
 line = 8
 
-[node name="storyline_trigger8" parent="." instance=ExtResource("3_5ub1k")]
+[node name="7" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1530, 3475)
 rotation = 1.5708
 sceneNumber = 2
 line = 7
 
-[node name="storyline_trigger7" parent="." instance=ExtResource("3_5ub1k")]
+[node name="6" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1572, 2475)
 rotation = 1.5708
 sceneNumber = 2
 line = 6
 
-[node name="storyline_trigger6" parent="." instance=ExtResource("3_5ub1k")]
+[node name="5" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1543, 2350)
 rotation = 1.5708
 sceneNumber = 2
 line = 5
 
-[node name="storyline_trigger5" parent="." instance=ExtResource("3_5ub1k")]
+[node name="4" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1545, 2150)
 rotation = 1.5708
 sceneNumber = 2
 line = 4
 
-[node name="storyline_trigger4" parent="." instance=ExtResource("3_5ub1k")]
+[node name="3" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1566, 1750)
 rotation = 1.5708
 sceneNumber = 2
 line = 3
 
-[node name="storyline_trigger3" parent="." instance=ExtResource("3_5ub1k")]
+[node name="2" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1581, 1420)
 rotation = 1.5708
 sceneNumber = 2
 line = 2
 
-[node name="storyline_trigger2" parent="." instance=ExtResource("3_5ub1k")]
+[node name="1" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1527, 580)
 rotation = 1.5708
 sceneNumber = 2
 line = 1
 
-[node name="storyline_trigger" parent="." instance=ExtResource("3_5ub1k")]
+[node name="0" parent="storyline_triggers" instance=ExtResource("3_5ub1k")]
 position = Vector2(1572, 368)
 rotation = 1.5708
 sceneNumber = 2

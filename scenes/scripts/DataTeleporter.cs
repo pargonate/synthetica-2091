@@ -2,10 +2,10 @@ using Godot;
 using System;
 using System.Text.RegularExpressions;
 
-public partial class data_teleporter : Area2D
+public partial class DataTeleporter : Area2D
 {
+	// Variables
 	private string currentScene;
-	// private int nextSceneNumber;
 	private string nextScene;
 
 	public void _on_body_entered(Node body)
@@ -39,8 +39,7 @@ public partial class data_teleporter : Area2D
 				{
 					nextScene = "end";
 				}
-
-				GetTree().ChangeSceneToFile($"res://scenes/{nextScene}.tscn");
+				GetTree().CallDeferred("change_scene_to_file", $"res://scenes/{nextScene}.tscn");
 			}
 		}
 	}

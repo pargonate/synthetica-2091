@@ -19,27 +19,21 @@ position = Vector2(1739, 1071)
 shape = SubResource("RectangleShape2D_gvo4y")
 
 [node name="Percy" parent="." instance=ExtResource("1_5mr4q")]
-position = Vector2(1661, 1040)
+position = Vector2(890, 1051)
+scale = Vector2(2.427, 2.479)
 
 [node name="jump_pad" parent="." instance=ExtResource("2_gmv5p")]
-position = Vector2(1280, 975)
+position = Vector2(1434, 1063)
 
 [node name="glitch" parent="." instance=ExtResource("3_2rpee")]
 position = Vector2(631, 973)
 
-[node name="data_stream" parent="." instance=ExtResource("4_bai7h")]
-position = Vector2(234, 803)
-
 [node name="laser_beam" parent="." instance=ExtResource("5_rk2w7")]
-position = Vector2(1100, 950)
-
-[node name="storyline_trigger3" parent="." instance=ExtResource("7_wngjq")]
-position = Vector2(2032, 322)
-line = 2
-
-[node name="storyline_trigger2" parent="." instance=ExtResource("7_wngjq")]
-position = Vector2(1941, 307)
-line = 1
+position = Vector2(1106, 798)
 
 [node name="storyline_trigger" parent="." instance=ExtResource("7_wngjq")]
-position = Vector2(1850, 297)
+position = Vector2(1880, 117)
+sceneType = "level"
+
+[node name="data_stream" parent="." instance=ExtResource("4_bai7h")]
+position = Vector2(228, 809)

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class firewall : CharacterBody2D
+public partial class Firewall : CharacterBody2D
 {
 	public float moveSpeedLevel1 { get; set; } = 425.0f;
 	public float moveSpeedLevel2 { get; set; } = 315.0f;

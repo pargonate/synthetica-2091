@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class glitch : Area2D
+public partial class Glitch : Area2D
 {
 	private AnimatedSprite2D animator;
 	private StaticBody2D body;

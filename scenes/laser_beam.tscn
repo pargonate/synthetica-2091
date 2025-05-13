@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://cpusdu4jmshm6"]
 
 [ext_resource type="Texture2D" uid="uid://dp7rh3f44krj3" path="res://sprites/laser_beam.png" id="1_848m6"]
-[ext_resource type="Script" path="res://scenes/scripts/laser_beam.cs" id="1_ktblb"]
+[ext_resource type="Script" uid="uid://dt5vx57escnhp" path="res://scenes/scripts/LaserBeam.cs" id="1_ktblb"]
 [ext_resource type="Texture2D" uid="uid://caqwxkq0p00lt" path="res://sprites/floor.png" id="3_tdeyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owmdt"]
@@ -197,21 +197,22 @@ animations = [{
 }]
 
 [node name="laser_beam" type="Area2D"]
-position = Vector2(-2, 261)
 script = ExtResource("1_ktblb")
 
 [node name="death_collider" type="CollisionShape2D" parent="."]
-position = Vector2(2, -295)
+position = Vector2(2, -208)
 shape = SubResource("RectangleShape2D_owmdt")
 debug_color = Color(0.917647, 0.243137, 0.4, 0.419608)
 
 [node name="beam" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 23)
+scale = Vector2(1, 0.798333)
 sprite_frames = SubResource("SpriteFrames_5wgux")
 animation = &"retract"
 autoplay = "extend"
 
 [node name="base" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -338)
+position = Vector2(2, -250)
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_7skld")
 animation = &"idle"

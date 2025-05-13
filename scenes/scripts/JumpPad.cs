@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class jump_pad : Area2D
+public partial class JumpPad : Area2D
 {
 	
 	private AnimatedSprite2D animator;

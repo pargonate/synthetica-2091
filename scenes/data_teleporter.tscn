@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b5lqcr0y3prj8"]
 
 [ext_resource type="Texture2D" uid="uid://bohltd0jdfi5h" path="res://sprites/data_stream.png" id="1_8tptw"]
-[ext_resource type="Script" path="res://scenes/scripts/data_teleporter.cs" id="1_ifnwd"]
+[ext_resource type="Script" uid="uid://bntigsgrmjhxw" path="res://scenes/scripts/DataTeleporter.cs" id="1_ifnwd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dj6ue"]
 atlas = ExtResource("1_8tptw")
@@ -57,7 +57,6 @@ animations = [{
 size = Vector2(1411, 541)
 
 [node name="data_teleporter" type="Area2D"]
-rotation = 3.14197
 script = ExtResource("1_ifnwd")
 
 [node name="1" type="AnimatedSprite2D" parent="."]

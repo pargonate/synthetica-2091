@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class data_stream : Path2D
+public partial class DataStream : Path2D
 {
 
 	private AnimationPlayer animator;
@@ -14,11 +14,13 @@ public partial class data_stream : Path2D
 
 	private void _on_area_2d_body_entered(Node body)
 	{
+		GD.Print(body);
 		if (body is CharacterBody2D character)
 		{
 			if (character is Percy player)
 			{
 				animator.Play("moving");
+				GD.Print("moving?");
 			}
 		}
 	}

@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Text.RegularExpressions;
 
-public partial class ui : Control
+public partial class UI : Control
 {
 	private Label id;
 	private TextureRect logo;

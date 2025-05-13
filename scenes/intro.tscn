@@ -240,8 +240,8 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
 _data = {
-"RESET": SubResource("Animation_fxe7m"),
-"appear": SubResource("Animation_aah3y")
+&"RESET": SubResource("Animation_fxe7m"),
+&"appear": SubResource("Animation_aah3y")
 }
 
 [node name="intro" type="Node2D"]

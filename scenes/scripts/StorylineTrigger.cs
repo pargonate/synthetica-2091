@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class storyline_trigger : Area2D
+public partial class StorylineTrigger : Area2D
 {
 	[ExportGroup("Storyline Properties")]
 	[Export(PropertyHint.Enum, "phase,level")]
@@ -13,14 +13,14 @@ public partial class storyline_trigger : Area2D
 
 	[Export]
 	public int line {get; set; } = 0;
-	private storyline storyline;
-	private ui ui;
+	private Storyline storyline;
+	private UI ui;
 	private AudioStreamPlayer2D audioPlayer;
 
 	public override void _Ready()
 	{
 		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
-		storyline = GetNode<storyline>("/root/Storyline");
+		storyline = GetNode<Storyline>("/root/Storyline");
 	}
 
 
@@ -34,8 +34,9 @@ public partial class storyline_trigger : Area2D
 				if (sceneType == "phase")
 				{
 					player.disable();
+					player.slowFall();
 				}
-				ui = player.GetNode<ui>("UI");
+				ui = player.GetNode<UI>("UI");
 				var (classification, speaker, text) = storyline.Play($"{sceneType}_{sceneNumber}", line);
 				ui.ShowLine(speaker, text);
 				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{sceneType}_{sceneNumber}/{line}.ogg");

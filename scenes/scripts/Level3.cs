@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class level_3 : Node2D
+public partial class Level3 : Node2D
 {
 	private AudioStreamPlayer2D backgroundMusic;
 

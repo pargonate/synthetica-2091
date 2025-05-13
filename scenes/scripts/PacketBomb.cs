@@ -1,19 +1,20 @@
 using Godot;
 using System;
 
-public partial class packet_bomb : CharacterBody2D
+public partial class PacketBomb : CharacterBody2D
 {
-	public float fall { get; set; } = 200.0f;
+	// Nodes
 	private AnimatedSprite2D animator;
 
-	// Called when the node enters the scene tree for the first time.
+	// Variables
+	public float fall { get; set; } = 200.0f;
+
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		animator.AnimationFinished += OnAnimationFinished;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -29,7 +30,7 @@ public partial class packet_bomb : CharacterBody2D
 
 	private void _on_area_2d_body_entered(Node body)
 	{
-		if (body is StaticBody2D || (body is TileMap)) 
+		if (body is StaticBody2D || (body is TileMapLayer)) 
 		{
 			animator.Play("explode");
 		}

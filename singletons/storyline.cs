@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-public partial class storyline : Node
+public partial class Storyline : Node
 {
 	public int currentLine = 0;
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bmkf7e3db22sv"]
 
 [ext_resource type="Texture2D" uid="uid://des5b21xecw6g" path="res://sprites/jump_pad.png" id="1_6a1pj"]
-[ext_resource type="Script" path="res://scenes/scripts/jump_pad.cs" id="1_boaj3"]
+[ext_resource type="Script" uid="uid://p0g42g4ak13x" path="res://scenes/scripts/JumpPad.cs" id="1_boaj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vpo4"]
 size = Vector2(196, 58)
@@ -84,9 +84,7 @@ shape = SubResource("RectangleShape2D_8vpo4")
 
 [node name="animator" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pmli1")
-animation = &"bounce"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

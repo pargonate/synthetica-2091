@@ -14,56 +14,59 @@ texture = ExtResource("1_hu4ld")
 
 [node name="Percy" parent="." instance=ExtResource("8_55bho")]
 position = Vector2(952, 189)
-jump = 0.05
+scale = Vector2(2.427, 2.479)
+gravity = 150.0
 
-[node name="storyline_trigger" parent="." instance=ExtResource("2_aeo4g")]
-position = Vector2(1572, 368)
-rotation = 1.5708
+[node name="storyline_triggers" type="Node2D" parent="."]
 
-[node name="storyline_trigger10" parent="." instance=ExtResource("2_aeo4g")]
+[node name="9" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1474, 7712)
 rotation = 1.5708
 line = 9
 
-[node name="storyline_trigger9" parent="." instance=ExtResource("2_aeo4g")]
+[node name="8" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1525, 6611)
 rotation = 1.5708
 line = 8
 
-[node name="storyline_trigger8" parent="." instance=ExtResource("2_aeo4g")]
+[node name="7" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1533, 6271)
 rotation = 1.5708
 line = 7
 
-[node name="storyline_trigger7" parent="." instance=ExtResource("2_aeo4g")]
+[node name="6" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1523, 5000)
 rotation = 1.5708
 line = 6
 
-[node name="storyline_trigger6" parent="." instance=ExtResource("2_aeo4g")]
+[node name="5" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1545, 4559)
 rotation = 1.5708
 line = 5
 
-[node name="storyline_trigger5" parent="." instance=ExtResource("2_aeo4g")]
+[node name="4" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1551, 3059)
 rotation = 1.5708
 line = 4
 
-[node name="storyline_trigger4" parent="." instance=ExtResource("2_aeo4g")]
+[node name="3" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1560, 2400)
 rotation = 1.5708
 line = 3
 
-[node name="storyline_trigger2" parent="." instance=ExtResource("2_aeo4g")]
+[node name="1" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1566, 1500)
 rotation = 1.5708
 line = 1
 
-[node name="storyline_trigger3" parent="." instance=ExtResource("2_aeo4g")]
+[node name="2" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
 position = Vector2(1573, 1900)
 rotation = 1.5708
 line = 2
+
+[node name="0" parent="storyline_triggers" instance=ExtResource("2_aeo4g")]
+position = Vector2(1572, 368)
+rotation = 1.5708
 
 [node name="data_teleporter" parent="." instance=ExtResource("4_w158a")]
 position = Vector2(871, 8623)

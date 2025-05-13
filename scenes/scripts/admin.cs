@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class admin : CharacterBody2D
+public partial class Admin : CharacterBody2D
 {
 	private AnimatedSprite2D animator;
 	private PackedScene packet_bomb_scene;

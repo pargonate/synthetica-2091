@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://d4gmkqm2f6maj"]
 
+[ext_resource type="Script" uid="uid://cnks85o141vgu" path="res://scenes/scripts/Admin.cs" id="1_3btkx"]
 [ext_resource type="Texture2D" uid="uid://612u0mvrg38p" path="res://sprites/admin.png" id="1_1868t"]
-[ext_resource type="Script" path="res://scenes/scripts/admin.cs" id="1_or525"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80blu"]
 size = Vector2(7, 59)
@@ -123,7 +123,7 @@ animations = [{
 }]
 
 [node name="admin" type="CharacterBody2D"]
-script = ExtResource("1_or525")
+script = ExtResource("1_3btkx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -29.5)

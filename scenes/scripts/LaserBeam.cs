@@ -2,16 +2,21 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class laser_beam : Area2D
+public partial class LaserBeam : Area2D
 {
+	// Nodes
 	private AnimatedSprite2D animator;
 	private CollisionShape2D beam;
+
+	// Variables
+	private int retractedLength = 0;
+	private int extendedLength = 500;
 
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("beam");
 		beam = GetNode<CollisionShape2D>("death_collider");
-		ChangeBeamCollision(600, 0.8f);
+		ChangeBeamCollision(extendedLength, 0.8f);
 		animator.AnimationFinished += OnAnimationFinished; 
 	}
 
@@ -36,16 +41,20 @@ public partial class laser_beam : Area2D
 	//	Once the beam has finished staying extended,
 	//	it'll start retracting.
 	{
+		if (!IsInstanceValid(animator)) return; // Ensure animator is valid
+
 		if (animator.Animation == "extend")
 		{
 			await Task.Delay(TimeSpan.FromSeconds(2));
+			if (!IsInstanceValid(animator)) return;
 			animator.Play("retract");
-			ChangeBeamCollision(0, 0.6f);
+			ChangeBeamCollision(retractedLength, 0.6f);
 		}
 		else if (animator.Animation == "retract")
 		{
 			await Task.Delay(TimeSpan.FromSeconds(2));
-			ChangeBeamCollision(600, 0.8f);
+			if (!IsInstanceValid(animator)) return;
+			ChangeBeamCollision(extendedLength, 0.8f);
 			animator.Play("extend");
 		}
 	}

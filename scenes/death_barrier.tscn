@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk3vbi07vqma4"]
 
-[ext_resource type="Script" path="res://scenes/scripts/death_barrier.cs" id="1_a1ly4"]
+[ext_resource type="Script" uid="uid://xt00cw7wgd4r" path="res://scenes/scripts/DeathBarrier.cs" id="1_a1ly4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5xt3"]
 size = Vector2(200, 75)

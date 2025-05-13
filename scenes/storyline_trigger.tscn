@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dek03fhky43ms"]
 
-[ext_resource type="Script" path="res://scenes/scripts/storyline_trigger.cs" id="1_yfc1m"]
+[ext_resource type="Script" uid="uid://cbuyb65d3oxkn" path="res://scenes/scripts/StorylineTrigger.cs" id="1_yfc1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8w2v0"]
 size = Vector2(20, 1899)

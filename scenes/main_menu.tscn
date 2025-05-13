@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://chhna0odxi8rp"]
 
 [ext_resource type="Texture2D" uid="uid://dari31irx5jp5" path="res://level_backgrounds/main_menu.png" id="1_0j88o"]
-[ext_resource type="Script" path="res://scenes/scripts/main_menu.cs" id="1_s5udk"]
+[ext_resource type="Script" path="res://scenes/scripts/MainMenu.cs" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dyutxmlfx6oym" path="res://sprites/logo.png" id="2_q7ud0"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="3_acxch"]
 
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_s5udk")
+script = ExtResource("1_wu84c")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(1012, 325)

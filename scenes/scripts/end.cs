@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class end : Node2D
+public partial class End : Node2D
 {
 	private Camera2D camera;
 	private AudioStreamPlayer2D audio;

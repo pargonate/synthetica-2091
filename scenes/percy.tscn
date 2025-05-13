@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://h5qad2s6di7w"]
 
-[ext_resource type="Script" path="res://scenes/scripts/Percy.cs" id="1_k08hw"]
+[ext_resource type="Script" uid="uid://dvxi3hw0v06b7" path="res://scenes/scripts/Percy.cs" id="1_k08hw"]
 [ext_resource type="Texture2D" uid="uid://bgsup5l88pavy" path="res://sprites/PR7-2.9.png" id="1_ryrn4"]
 [ext_resource type="Texture2D" uid="uid://d37ro0uwfftpu" path="res://sprites/black_bar.png" id="3_ldxtj"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="4_8u6td"]
@@ -348,13 +348,13 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77woc"]
 _data = {
-"RESET": SubResource("Animation_ill8m"),
-"death": SubResource("Animation_ei1qq")
+&"RESET": SubResource("Animation_ill8m"),
+&"death": SubResource("Animation_ei1qq")
 }
 
 [node name="Percy" type="CharacterBody2D"]
-position = Vector2(561, 574)
-scale = Vector2(2.42651, 2.47933)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_k08hw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -416,5 +416,5 @@ label_settings = SubResource("LabelSettings_3kgop")
 
 [node name="death_animator" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_77woc")
+&"": SubResource("AnimationLibrary_77woc")
 }

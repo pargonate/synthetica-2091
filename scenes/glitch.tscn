@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cfxcfsnxhrgsn"]
 
-[ext_resource type="Script" path="res://scenes/scripts/glitch.cs" id="1_3ptjo"]
+[ext_resource type="Script" uid="uid://d0uxkj4nuoduf" path="res://scenes/scripts/Glitch.cs" id="1_fxh7w"]
 [ext_resource type="Texture2D" uid="uid://dufelw6jrh0pm" path="res://sprites/glitch.png" id="1_xpe3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68nw4"]
@@ -154,7 +154,7 @@ animations = [{
 }]
 
 [node name="glitch" type="Area2D"]
-script = ExtResource("1_3ptjo")
+script = ExtResource("1_fxh7w")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-1, 1.5)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dssmrxcxb744h"]
 
+[ext_resource type="Script" uid="uid://fxp5yhfdgbrj" path="res://scenes/scripts/End.cs" id="1_o5lv4"]
 [ext_resource type="Texture2D" uid="uid://dgprj04l2k3cs" path="res://level_backgrounds/credits.png" id="1_s7xh3"]
-[ext_resource type="Script" path="res://scenes/scripts/end.cs" id="1_wymr0"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="2_s68h6"]
 [ext_resource type="LabelSettings" uid="uid://ci81mtfy6ycgh" path="res://scenes/cinematic.tres" id="3_0xe6r"]
 [ext_resource type="Texture2D" uid="uid://dyutxmlfx6oym" path="res://sprites/logo.png" id="4_45dir"]
@@ -377,8 +377,8 @@ tracks/12/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
 _data = {
-"RESET": SubResource("Animation_fxe7m"),
-"appear": SubResource("Animation_aah3y")
+&"RESET": SubResource("Animation_fxe7m"),
+&"appear": SubResource("Animation_aah3y")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf243"]
@@ -386,7 +386,7 @@ size = Vector2(140, 3100)
 
 [node name="end" type="Node2D"]
 position = Vector2(967, 588)
-script = ExtResource("1_wymr0")
+script = ExtResource("1_o5lv4")
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(-967, -588)
@@ -630,7 +630,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_gnxyv")
+&"": SubResource("AnimationLibrary_gnxyv")
 }
 
 [node name="logo" type="Sprite2D" parent="."]

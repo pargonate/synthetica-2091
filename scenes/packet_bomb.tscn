@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dtaob5dbj85c0"]
 
 [ext_resource type="Texture2D" uid="uid://drmg6bill34cy" path="res://sprites/packet_bomb.png" id="1_53cox"]
-[ext_resource type="Script" path="res://scenes/scripts/packet_bomb.cs" id="1_s1fqj"]
+[ext_resource type="Script" uid="uid://dngim30v3nqix" path="res://scenes/scripts/PacketBomb.cs" id="1_pv0ic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwkam"]
 atlas = ExtResource("1_53cox")
@@ -98,7 +98,7 @@ size = Vector2(54, 35)
 size = Vector2(106, 62)
 
 [node name="packet_bomb" type="CharacterBody2D"]
-script = ExtResource("1_s1fqj")
+script = ExtResource("1_pv0ic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 5
