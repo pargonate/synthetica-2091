@@ -1,8 +1,8 @@
 using Godot;
-using System;
 
 public partial class Level3 : Node2D
 {
+	// Nodes
 	private AudioStreamPlayer2D backgroundMusic;
 
 	public override void _Ready()
@@ -17,7 +17,7 @@ public partial class Level3 : Node2D
 		{
 			if (character is Percy player)
 			{
-				player.disable();
+				player.DisableMoving();
 				backgroundMusic.VolumeDb = -20.0f;
 			}
 		}

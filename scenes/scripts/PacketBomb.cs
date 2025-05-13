@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class PacketBomb : CharacterBody2D
 {
@@ -7,25 +6,12 @@ public partial class PacketBomb : CharacterBody2D
 	private AnimatedSprite2D animator;
 
 	// Variables
-	public float fall { get; set; } = 200.0f;
+	public float Fall { get; set; } = 200.0f;
 
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		animator.AnimationFinished += OnAnimationFinished;
-	}
-
-	public override void _Process(double delta)
-	{
-		Vector2 velocity = Velocity;
-
-		if (!IsOnFloor())
-		{
-			velocity.Y = fall;
-		}
-
-		Velocity = velocity;
-		MoveAndSlide();
 	}
 
 	private void _on_area_2d_body_entered(Node body)
@@ -44,7 +30,7 @@ public partial class PacketBomb : CharacterBody2D
 			{
 				if (animator.IsPlaying() == true)
 				{
-					player.kill();	
+					player.Kill();	
 				}
 			}
 		}
@@ -54,4 +40,18 @@ public partial class PacketBomb : CharacterBody2D
 	{
 		QueueFree();
 	}
+	
+	public override void _Process(double delta)
+	{
+		Vector2 velocity = Velocity;
+
+		if (!IsOnFloor())
+		{
+			velocity.Y = Fall;
+		}
+
+		Velocity = velocity;
+		MoveAndSlide();
+	}
+
 }

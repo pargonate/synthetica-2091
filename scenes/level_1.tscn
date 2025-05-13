@@ -67,7 +67,7 @@ tile_map_data = PackedByteArray("AAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAA
 tile_set = SubResource("TileSet_bfe0t")
 
 [node name="Percy" parent="." instance=ExtResource("3_nfd6w")]
-position = Vector2(22.1516, 524.953)
+position = Vector2(41, 524)
 scale = Vector2(2.427, 2.479)
 
 [node name="storyline_triggers" type="Node2D" parent="."]
@@ -75,92 +75,91 @@ scale = Vector2(2.427, 2.479)
 [node name="15" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(21067.7, -2452.21)
 rotation = 1.5708
-sceneType = "level"
-line = 17
+SceneType = "level"
+Line = 17
 
 [node name="14" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(18841.4, -3047.33)
 rotation = -3.14159
-sceneType = "level"
-line = 16
+SceneType = "level"
+Line = 16
 
 [node name="13" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(18148.6, -2487.81)
 rotation = 1.5708
-sceneType = "level"
-line = 15
+SceneType = "level"
+Line = 15
 
 [node name="12" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(15943.2, -1747.97)
-sceneType = "level"
-line = 14
+SceneType = "level"
+Line = 14
 
 [node name="11" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(15110.8, -1494.15)
-sceneType = "level"
-line = 13
+SceneType = "level"
+Line = 13
 
 [node name="10" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(13208.4, -1636.97)
-sceneType = "level"
-line = 12
+SceneType = "level"
+Line = 12
 
 [node name="9" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(12595.4, -1646.63)
-sceneType = "level"
-line = 11
+SceneType = "level"
+Line = 11
 
 [node name="8" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(11775.5, -1627.83)
-sceneType = "level"
-line = 10
+SceneType = "level"
+Line = 10
 
 [node name="7" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(10234, -1393.45)
-sceneType = "level"
-line = 9
+SceneType = "level"
+Line = 9
 
 [node name="6" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(7781.32, -1230.07)
-sceneType = "level"
-line = 8
+SceneType = "level"
+Line = 8
 
 [node name="5" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(7200.59, -1108.8)
-sceneType = "level"
-line = 7
+SceneType = "level"
+Line = 7
 
 [node name="4" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(7144.68, -152.671)
 rotation = 1.5708
-sceneType = "level"
-line = 5
+SceneType = "level"
+Line = 5
 
 [node name="3" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(5268.35, -300.556)
-sceneType = "level"
-line = 3
+SceneType = "level"
+Line = 3
 
 [node name="2" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(3711.24, -350.141)
-sceneType = "level"
-line = 2
+SceneType = "level"
+Line = 2
 
 [node name="1" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(2712.18, -374.95)
-sceneType = "level"
-line = 1
+SceneType = "level"
+Line = 1
 
 [node name="0" parent="storyline_triggers" instance=ExtResource("9_qgfe5")]
 position = Vector2(101.311, -314.223)
-sceneType = "level"
-
-[node name="data_teleporter" parent="." instance=ExtResource("7_2lqt4")]
-position = Vector2(20529, -31.0271)
-rotation = 3.14159
-scale = Vector2(2, 2)
-script = null
+SceneType = "level"
 
 [node name="firewall" parent="." instance=ExtResource("10_8tf28")]
 position = Vector2(-3445.73, -784.444)
 scale = Vector2(5, 5)
+
+[node name="data_teleporter" parent="." instance=ExtResource("7_2lqt4")]
+position = Vector2(20464, 210)
+rotation = 3.14159
+scale = Vector2(2, 2)

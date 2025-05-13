@@ -1,9 +1,8 @@
 using Godot;
-using System;
 
 public partial class DataStream : Path2D
 {
-
+	// Nodes
 	private AnimationPlayer animator;
 
 	public override void _Ready()
@@ -11,16 +10,13 @@ public partial class DataStream : Path2D
 		animator = GetNode<AnimationPlayer>("AnimationPlayer");
 	}
 
-
 	private void _on_area_2d_body_entered(Node body)
 	{
-		GD.Print(body);
 		if (body is CharacterBody2D character)
 		{
 			if (character is Percy player)
 			{
 				animator.Play("moving");
-				GD.Print("moving?");
 			}
 		}
 	}

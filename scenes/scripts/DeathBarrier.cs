@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class DeathBarrier : Area2D
 {
@@ -9,7 +8,7 @@ public partial class DeathBarrier : Area2D
 		{
 			if (character is Percy player)
 			{
-				player.kill();
+				player.Kill();
 			}
 		}
 	}

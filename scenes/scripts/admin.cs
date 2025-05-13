@@ -1,18 +1,22 @@
 using Godot;
-using System;
-using System.Threading.Tasks;
-
 public partial class Admin : CharacterBody2D
 {
+	// Nodes
 	private AnimatedSprite2D animator;
 	private PackedScene packet_bomb_scene;
-	private RandomNumberGenerator rng = new RandomNumberGenerator();
 	private Timer spawnTimer;
 
+	// Variables
+	private RandomNumberGenerator rng = new RandomNumberGenerator();
+
+
 	public override void _Ready()
+	//	Spawns packet bombs every 5 seconds
 	{
+		// Admin "Spawn" Animation
 		animator = GetNode<AnimatedSprite2D>("animator");
 		animator.AnimationFinished += OnAnimationFinished;
+		// Timer
 		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
 		spawnTimer = new Timer();
 		spawnTimer.WaitTime = 5.0f;
@@ -23,6 +27,9 @@ public partial class Admin : CharacterBody2D
 	}
 
 	private void OnSpawnTimerTimeOut()
+	//	Spawn 15 packet bombs within the level,
+	//	changing the boundaries due to severe level
+	//	differences.
 	{
 		for (int i = 0; i < 15; i++)
 		{
@@ -45,6 +52,7 @@ public partial class Admin : CharacterBody2D
 	}
 
 	public void SpawnPacketBomb(float minX, float maxX, float minY, float maxY)
+	//	Randomize spawn location between defined boundaries.
 	{
 		rng.Randomize();
 		float randomX = rng.RandfRange(minX, maxX);

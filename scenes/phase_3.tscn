@@ -23,91 +23,91 @@ gravity = 150.0
 [node name="14" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1562, 8850)
 rotation = 1.5708
-sceneNumber = 3
-line = 14
+SceneNumber = 3
+Line = 14
 
 [node name="13" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1560, 6750)
 rotation = 1.5708
-sceneNumber = 3
-line = 13
+SceneNumber = 3
+Line = 13
 
 [node name="12" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1555, 6050)
 rotation = 1.5708
-sceneNumber = 3
-line = 12
+SceneNumber = 3
+Line = 12
 
 [node name="11" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1534, 5500)
 rotation = 1.5708
-sceneNumber = 3
-line = 11
+SceneNumber = 3
+Line = 11
 
 [node name="10" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1550, 4800)
 rotation = 1.5708
-sceneNumber = 3
-line = 10
+SceneNumber = 3
+Line = 10
 
 [node name="9" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1537, 3500)
 rotation = 1.5708
-sceneNumber = 3
-line = 9
+SceneNumber = 3
+Line = 9
 
 [node name="8" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1540, 2400)
 rotation = 1.5708
-sceneNumber = 3
-line = 8
+SceneNumber = 3
+Line = 8
 
 [node name="7" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1528, 2200)
 rotation = 1.5708
-sceneNumber = 3
-line = 7
+SceneNumber = 3
+Line = 7
 
 [node name="6" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1530, 2050)
 rotation = 1.5708
-sceneNumber = 3
-line = 6
+SceneNumber = 3
+Line = 6
 
 [node name="5" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1530, 1800)
 rotation = 1.5708
-sceneNumber = 3
-line = 5
+SceneNumber = 3
+Line = 5
 
 [node name="4" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1555, 1500)
 rotation = 1.5708
-sceneNumber = 3
-line = 4
+SceneNumber = 3
+Line = 4
 
 [node name="3" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1555, 1300)
 rotation = 1.5708
-sceneNumber = 3
-line = 3
+SceneNumber = 3
+Line = 3
 
 [node name="2" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1559, 1000)
 rotation = 1.5708
-sceneNumber = 3
-line = 2
+SceneNumber = 3
+Line = 2
 
 [node name="1" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1547, 600)
 rotation = 1.5708
-sceneNumber = 3
-line = 1
+SceneNumber = 3
+Line = 1
 
 [node name="0" parent="storyline_triggers" instance=ExtResource("3_765ic")]
 position = Vector2(1572, 368)
 rotation = 1.5708
-sceneNumber = 3
+SceneNumber = 3
 
 [node name="data_teleporter" parent="." instance=ExtResource("4_22qo7")]
 position = Vector2(970, 10941)

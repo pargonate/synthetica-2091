@@ -1,27 +1,30 @@
 using Godot;
-using System;
 
 public partial class Firewall : CharacterBody2D
 {
-	public float moveSpeedLevel1 { get; set; } = 425.0f;
-	public float moveSpeedLevel2 { get; set; } = 315.0f;
-	public float moveSpeedLevel3 { get; set; } = 470.0f;
+	// Variables
+	public float MoveSpeedLevel1 { get; set; } = 425.0f;
+	public float MoveSpeedLevel2 { get; set; } = 315.0f;
+	public float MoveSpeedLevel3 { get; set; } = 470.0f;
 	private float universalMove;
 
 
 	public override void _Ready()
+	//	With lots of testing, the admin's speed needs
+	//	to be adjusted based on the level as certain 
+	//	obstacles take longer to overcome.
 	{
 		if (GetParent().SceneFilePath == "res://scenes/level_1.tscn")
 		{
-			universalMove = moveSpeedLevel1;
+			universalMove = MoveSpeedLevel1;
 		}
 		else if (GetParent().SceneFilePath == "res://scenes/level_2.tscn")
 		{
-			universalMove = moveSpeedLevel2;
+			universalMove = MoveSpeedLevel2;
 		}
 		else if (GetParent().SceneFilePath == "res://scenes/level_3.tscn")
 		{
-			universalMove = moveSpeedLevel3;
+			universalMove = MoveSpeedLevel3;
 		}
 	}
 
@@ -31,7 +34,7 @@ public partial class Firewall : CharacterBody2D
 		{
 			if (character is Percy player)
 			{
-				player.kill();
+				player.Kill();
 			}
 		}
 	}

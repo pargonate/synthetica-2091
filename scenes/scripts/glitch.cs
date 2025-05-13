@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 public partial class Glitch : Area2D
 {
+	// Nodes
 	private AnimatedSprite2D animator;
 	private StaticBody2D body;
 	private CollisionShape2D collision;

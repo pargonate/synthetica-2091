@@ -1,6 +1,4 @@
 using Godot;
-using System;
-using System.Text.RegularExpressions;
 
 public partial class DataTeleporter : Area2D
 {
@@ -9,6 +7,8 @@ public partial class DataTeleporter : Area2D
 	private string nextScene;
 
 	public void _on_body_entered(Node body)
+	//	Once Percy enters the teleporter, we have to switch
+	//	from a phase to a level (vice versa).
 	{
 		if (body is CharacterBody2D character)
 		{
@@ -39,6 +39,7 @@ public partial class DataTeleporter : Area2D
 				{
 					nextScene = "end";
 				}
+
 				GetTree().CallDeferred("change_scene_to_file", $"res://scenes/{nextScene}.tscn");
 			}
 		}

@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 public partial class UI : Control
 {
+	// Nodes
 	private Label id;
 	private TextureRect logo;
 	private Label line;
@@ -23,6 +24,7 @@ public partial class UI : Control
 			var sceneType = match.Groups["sceneType"].Value;
 			var sceneNumber = match.Groups["sceneNumber"].Value;
 
+			// Capitalize first char
 			if (sceneType == "level")
 			{
 				sceneType = "Level";
@@ -42,6 +44,8 @@ public partial class UI : Control
 	}
 
 	public void ShowLine(string speaker, string text)
+	//	Changes the text to display the line given, the 
+	//	color of the text, and the logo.
 	{
 		logo.Visible = true;
 		if (speaker == "A")

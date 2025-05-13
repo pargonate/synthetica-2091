@@ -16,6 +16,7 @@ font_color = Color(1, 1, 1, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_leg68"]
 font = ExtResource("2_s68h6")
 font_size = 75
+font_color = Color(1, 1, 1, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_du2fc"]
 line_spacing = 20.0
@@ -61,7 +62,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
-tracks/0/path = NodePath("Control/6:label_settings:font_color")
+tracks/0/path = NodePath("text_blocks/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -73,7 +74,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/0:label_settings:font_color")
+tracks/1/path = NodePath("text_blocks/0:label_settings:font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -85,7 +86,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/5:label_settings:font_color")
+tracks/2/path = NodePath("text_blocks/5:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -97,7 +98,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/1:label_settings:font_color")
+tracks/3/path = NodePath("text_blocks/1:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -109,7 +110,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/4:label_settings:font_color")
+tracks/4/path = NodePath("text_blocks/4:label_settings:font_color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -121,7 +122,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Control/2:label_settings:font_color")
+tracks/5/path = NodePath("text_blocks/2:label_settings:font_color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -133,7 +134,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/3:label_settings:font_color")
+tracks/6/path = NodePath("text_blocks/3:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -157,7 +158,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Control/7:label_settings:font_color")
+tracks/8/path = NodePath("text_blocks/7:label_settings:font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -169,19 +170,19 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Control/8:label_settings:font_color")
+tracks/9/path = NodePath("text_blocks/8:label_settings:font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Control/10:label_settings:font_color")
+tracks/10/path = NodePath("text_blocks/10:label_settings:font_color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -221,7 +222,7 @@ length = 100.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/6:label_settings:font_color")
+tracks/0/path = NodePath("text_blocks/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -233,7 +234,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/0:label_settings:font_color")
+tracks/1/path = NodePath("text_blocks/0:label_settings:font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -245,7 +246,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/5:label_settings:font_color")
+tracks/2/path = NodePath("text_blocks/5:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -257,7 +258,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/1:label_settings:font_color")
+tracks/3/path = NodePath("text_blocks/1:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -269,7 +270,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/4:label_settings:font_color")
+tracks/4/path = NodePath("text_blocks/4:label_settings:font_color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -281,7 +282,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Control/2:label_settings:font_color")
+tracks/5/path = NodePath("text_blocks/2:label_settings:font_color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -293,7 +294,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/3:label_settings:font_color")
+tracks/6/path = NodePath("text_blocks/3:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -317,7 +318,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Control/7:label_settings:font_color")
+tracks/8/path = NodePath("text_blocks/7:label_settings:font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -329,7 +330,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Control/8:label_settings:font_color")
+tracks/9/path = NodePath("text_blocks/8:label_settings:font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -341,7 +342,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Control/10:label_settings:font_color")
+tracks/10/path = NodePath("text_blocks/10:label_settings:font_color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -405,7 +406,7 @@ position = Vector2(-29.4999, -53.5)
 scale = Vector2(5.0175, 5.755)
 texture = ExtResource("5_2qkno")
 
-[node name="Control" type="Control" parent="."]
+[node name="text_blocks" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -951.0
@@ -414,7 +415,7 @@ offset_right = 969.0
 offset_bottom = 538.0
 metadata/_edit_use_anchors_ = true
 
-[node name="10" type="Label" parent="Control"]
+[node name="10" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -435,7 +436,7 @@ vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="8" type="Label" parent="Control"]
+[node name="8" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -457,7 +458,7 @@ vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="7" type="Label" parent="Control"]
+[node name="7" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -481,7 +482,7 @@ vertical_alignment = 2
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="6" type="Label" parent="Control"]
+[node name="6" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -500,7 +501,7 @@ horizontal_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="5" type="Label" parent="Control"]
+[node name="5" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -520,7 +521,7 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="4" type="Label" parent="Control"]
+[node name="4" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -541,7 +542,7 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="3" type="Label" parent="Control"]
+[node name="3" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -562,7 +563,7 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="2" type="Label" parent="Control"]
+[node name="2" type="Label" parent="text_blocks"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -575,7 +576,7 @@ offset_right = 839.5
 offset_bottom = 345.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "THIS IS A LIFELONG PROJECT INTIATED BY NATHAN PARKER. THIS GAME WILL ONLY RECEIVE TWO MORE UPDATES WITHIN NATHAN'S LIFETIME."
+text = "THIS IS A LIFELONG PROJECT initiated BY NATHAN PARKER. THIS GAME WILL ONLY RECEIVE TWO MORE UPDATES WITHIN NATHAN'S LIFETIME."
 label_settings = SubResource("LabelSettings_bj1vu")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -583,7 +584,7 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="1" type="Label" parent="Control"]
+[node name="1" type="Label" parent="text_blocks"]
 texture_filter = 4
 layout_mode = 1
 anchors_preset = -1
@@ -605,7 +606,7 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
-[node name="0" type="Label" parent="Control"]
+[node name="0" type="Label" parent="text_blocks"]
 texture_filter = 4
 layout_mode = 1
 anchors_preset = 8

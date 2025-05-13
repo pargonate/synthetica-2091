@@ -1,21 +1,22 @@
 using Godot;
-using System;
-using System.Threading.Tasks;
 
 public partial class StorylineTrigger : Area2D
 {
-	[ExportGroup("Storyline Properties")]
-	[Export(PropertyHint.Enum, "phase,level")]
-	public string sceneType { get; set; } = "phase";
-
-	[Export]
-	public int sceneNumber { get; set; } = 1;
-
-	[Export]
-	public int line {get; set; } = 0;
+	// Nodes
 	private Storyline storyline;
 	private UI ui;
 	private AudioStreamPlayer2D audioPlayer;
+
+	// Variables
+	[ExportGroup("Storyline Properties")]
+	[Export(PropertyHint.Enum, "phase,level")]
+	public string SceneType { get; set; } = "phase";
+
+	[Export]
+	public int SceneNumber { get; set; } = 1;
+
+	[Export]
+	public int Line {get; set; } = 0;
 
 	public override void _Ready()
 	{
@@ -25,22 +26,26 @@ public partial class StorylineTrigger : Area2D
 
 
 	private void _on_body_entered(Node body)
+	//	Once Percy enters the area, we call the
+	//	UI to show the line, which is fetched
+	//	from the singleton storyline. Then we play
+	//	audio in parallel. 
 	{
 		if (body is CharacterBody2D character)
 		{
 			if (character is Percy player)
 			{
 				StopSpeech();
-				if (sceneType == "phase")
+				if (SceneType == "phase")
 				{
-					player.disable();
-					player.slowFall();
+					player.DisableMoving();
+					player.SlowFall();
 				}
 				ui = player.GetNode<UI>("UI");
-				var (classification, speaker, text) = storyline.Play($"{sceneType}_{sceneNumber}", line);
+				var (classification, speaker, text) = storyline.Play($"{SceneType}_{SceneNumber}", Line);
 				ui.ShowLine(speaker, text);
-				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{sceneType}_{sceneNumber}/{line}.ogg");
-				if (line >= 5 && sceneType == "phase" && sceneNumber == 1) 
+				audioPlayer.Stream = GD.Load<AudioStream>($"res://audio/{SceneType}_{SceneNumber}/{Line}.ogg");
+				if (Line >= 5 && SceneType == "phase" && SceneNumber == 1) 
 				{
 					var id = ui.GetNode<Label>("VBoxContainer/top_bar/Player");
 					id.Text = "Percy";

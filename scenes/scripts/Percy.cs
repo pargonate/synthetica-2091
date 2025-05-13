@@ -1,21 +1,18 @@
 using Godot;
 using System;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 public partial class Percy : CharacterBody2D
 {
 	// Nodes
  	private AnimatedSprite2D animator;
-	private PackedScene packet_bomb_scene;
 	private Camera2D camera;
-	private Control ui;
-	private Label debug_y;
-	private AnimationPlayer death_animator;
-	private Sprite2D top_bar;
-	private Sprite2D bottom_bar;
-	private Label label;
-	private AudioStreamPlayer2D audioPlayer;
+	private Control UI;
+	private Label debugY;
+	private AnimationPlayer deathAnimator;
+	private Sprite2D topBar;
+	private Sprite2D bottomBar;
+	private AudioStreamPlayer2D terminatedAudio;
 
 	// Variables
 	[Export]
@@ -29,25 +26,25 @@ public partial class Percy : CharacterBody2D
 	public bool animationBusy = false;
 	private bool died;
 	private bool lowGravity = false;
-	private bool disabled_movement = false;
-	private bool stop_movement = false;
+	private bool stopMovement = false;
+	private bool stopFalling = false;
 
 	public override void _Ready()
 	{
 		animator = GetNode<AnimatedSprite2D>("animator");
 		camera = GetNode<Camera2D>("Camera2D");
-		ui = GetNode<Control>("UI");
-		packet_bomb_scene = GD.Load<PackedScene>("res://scenes/packet_bomb.tscn");
+		UI = GetNode<Control>("UI");
 
-		death_animator = GetNode<AnimationPlayer>("death_animator");
-		top_bar = GetNode<Sprite2D>("top_bar");
-		bottom_bar = GetNode<Sprite2D>("bottom_bar");
-		label = GetNode<Label>("Label");
-		debug_y = GetNode<Label>("debug_y");
-		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+		deathAnimator = GetNode<AnimationPlayer>("death_animator");
+		topBar = GetNode<Sprite2D>("top_bar");
+		bottomBar = GetNode<Sprite2D>("bottom_bar");
+		debugY = GetNode<Label>("debug_y");
+		terminatedAudio = GetNode<AudioStreamPlayer2D>("terminated_audio");
 	}
 
 	public void flip(float velocityX)
+	//	Change the direction of Percy based on the
+	//	key and velocity.
 	{
 		if (Input.IsKeyPressed(Godot.Key.A) || Input.IsKeyPressed(Godot.Key.Left)) {
 			if (velocityX < 0)
@@ -62,13 +59,57 @@ public partial class Percy : CharacterBody2D
 		}		
 	}
 
+	public async void Kill()
+	{
+		if (died == false) 
+		{
+			deathAnimator.Play("death");
+
+			foreach (Node node in GetTree().GetNodesInGroup("speech"))
+			{
+				if (node is AudioStreamPlayer2D player)
+				{
+					player.Stop();
+					player.Stream = null;
+					player.Seek(-1);
+				}
+			}
+
+			terminatedAudio.Play();
+			died = true;
+			await Task.Delay(TimeSpan.FromSeconds(2));
+			GetTree().ChangeSceneToFile(GetParent().SceneFilePath);
+		}
+	}
+
+	public void DisableMoving()
+	{
+		stopMovement = true;
+	}
+
+	public void DisableFalling()
+	{
+		stopFalling = true;
+	}
+
+	public void SlowFall()
+	{
+		lowGravity = true;
+	}
+
+	public void AdjustUI()
+	{
+		UI.QueueFree();
+		camera.Zoom = new Vector2(0.5f, 0.5f);
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 
 		if (!IsOnFloor()) 
 		{
-			if (stop_movement == false)
+			if (stopFalling == false) // Flag for when in a phase
 			{
 				if (velocity.Y < 0)
 				{
@@ -80,7 +121,7 @@ public partial class Percy : CharacterBody2D
 					flip(velocity.X);
 				}
 
-				if (lowGravity == true)
+				if (lowGravity == true) // Also with phases, the player needs to move at a constant speed
 				{
 					velocity.Y = gravity;
 				}
@@ -102,16 +143,19 @@ public partial class Percy : CharacterBody2D
 				animator.Play("idle");
 			}
 
+			// Due to the camera zooming out, 
+			// we also have to zoom out the 
+			// other nodes (UI, Terminated) 
 			camera.Zoom = new Vector2(1.4f, 1.4f);
-			ui.Size = new Vector2(2020, 1094);
-			ui.Position = new Vector2(-285, -202);
-			ui.Scale = new Vector2(0.28f, 0.28f);
+			UI.Size = new Vector2(2020, 1094);
+			UI.Position = new Vector2(-285, -202);
+			UI.Scale = new Vector2(0.28f, 0.28f);
 			_UpdateMovementAnimations(velocity.X);
 		}
 
 		velocity.X = 0;
 
-		if (disabled_movement == false)
+		if (stopMovement == false) // For when we just need to stop x-axis movement
 		{
 			if (Input.IsActionPressed("left"))
 			{
@@ -133,21 +177,16 @@ public partial class Percy : CharacterBody2D
 			}	
 		}	
 
-		debug_y.Text = $"Y-cord: {Math.Round(Position.Y, 0)}";
-		if (stop_movement == false)
+		debugY.Text = $"Y-cord: {Math.Round(Position.Y, 0)}";
+		if (stopFalling == false)
 		{
 			Velocity = velocity;
 			MoveAndSlide();
 		}
-
-		if (Input.IsKeyPressed(Godot.Key.E)) {
-			var packet_bomb = packet_bomb_scene.Instantiate() as CharacterBody2D;
-			GetParent().AddChild(packet_bomb);
-			packet_bomb.GlobalPosition = GlobalPosition + new Vector2(0, -1000);
-		}
 	}
 
 	private void _UpdateMovementAnimations(float velocityX)
+	//	Play animations based on movement speed
 	{
 		bool walking = velocityX != 0;
 		bool running = velocityX > 200.0f || velocityX < -200.0f;
@@ -160,49 +199,5 @@ public partial class Percy : CharacterBody2D
 		}
 
 		flip(velocityX);
-	}
-
-	public async void kill()
-	{
-		if (died == false) 
-		{
-			death_animator.Play("death");
-
-			foreach (Node node in GetTree().GetNodesInGroup("speech"))
-			{
-				if (node is AudioStreamPlayer2D player)
-				{
-					player.Stop();
-					player.Stream = null;
-					player.Seek(-1);
-				}
-			}
-
-			audioPlayer.Play();
-			died = true;
-			await Task.Delay(TimeSpan.FromSeconds(2));
-			GetTree().ChangeSceneToFile(GetParent().SceneFilePath);
-		}
-	}
-
-	public void disable()
-	{
-		disabled_movement = true;
-	}
-
-	public void stop()
-	{
-		stop_movement = true;
-	}
-
-	public void slowFall()
-	{
-		lowGravity = true;
-	}
-
-	public void adjustUI()
-	{
-		ui.QueueFree();
-		camera.Zoom = new Vector2(0.5f, 0.5f);
 	}
 }

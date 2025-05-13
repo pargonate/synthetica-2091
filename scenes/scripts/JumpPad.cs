@@ -1,9 +1,8 @@
 using Godot;
-using System;
 
 public partial class JumpPad : Area2D
 {
-	
+	// Nodes
 	private AnimatedSprite2D animator;
 
 	public override void _Ready()
@@ -27,12 +26,13 @@ public partial class JumpPad : Area2D
 					await ToSignal(GetTree().CreateTimer(0.01f), "timeout");
 				}
 
+				// Adjust nodes based on zoom difference
 				Camera2D camera = player.GetNode<Camera2D>("Camera2D");
-				Control ui = player.GetNode<Control>("UI");
+				Control UI = player.GetNode<Control>("UI");
 				camera.Zoom = new Vector2(0.8f, 0.8f);
-				ui.Size = new Vector2(1976, 1088);
-				ui.Position = new Vector2(-485, -314);
-				ui.Scale = new Vector2(0.49f, 0.49f);
+				UI.Size = new Vector2(1976, 1088);
+				UI.Position = new Vector2(-485, -314);
+				UI.Scale = new Vector2(0.49f, 0.49f);
 			}
 		}
 	}

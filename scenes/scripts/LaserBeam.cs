@@ -65,7 +65,7 @@ public partial class LaserBeam : Area2D
 		{
 			if (character is Percy player)
 			{
-				player.kill();
+				player.Kill();
 			}
 		}
 	}
