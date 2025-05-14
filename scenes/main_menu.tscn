@@ -44,7 +44,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2D:position")
+tracks/2/path = NodePath("camera:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -84,7 +84,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2D:position")
+tracks/2/path = NodePath("camera:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -255,19 +255,17 @@ grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_q7ud0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="."]
 position = Vector2(960, 1783)
 
 [node name="boot_audio" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(960, 1783)
 stream = ExtResource("7_oa1go")
-autoplay = true
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tbmy8")
 }
-autoplay = "appear"
 
 [connection signal="pressed" from="buttons_container/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="buttons_container/VBoxContainer/credits" to="." method="_on_credits_pressed"]

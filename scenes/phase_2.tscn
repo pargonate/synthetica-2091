@@ -13,7 +13,7 @@ scale = Vector2(1.48659, 6.36574)
 texture = ExtResource("1_lu2gi")
 
 [node name="Percy" parent="." instance=ExtResource("2_a11d2")]
-position = Vector2(940, 319)
+position = Vector2(942, 364)
 scale = Vector2(2.427, 2.479)
 gravity = 150.0
 
@@ -109,4 +109,5 @@ rotation = 1.5708
 SceneNumber = 2
 
 [node name="data_teleporter" parent="." instance=ExtResource("4_0qe5x")]
-position = Vector2(966, 10700)
+position = Vector2(1020, 10858)
+scale = Vector2(2, 2)

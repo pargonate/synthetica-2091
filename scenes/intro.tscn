@@ -125,18 +125,6 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("logo:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_aah3y"]
 resource_name = "appear"
@@ -224,18 +212,6 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.566372), Color(0.831373, 0.72549, 0.494118, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("logo:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(16.2, 22.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
@@ -392,7 +368,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Abell Logo" type="Sprite2D" parent="Control"]
+[node name="abell_logo" type="Sprite2D" parent="Control"]
 position = Vector2(964, 1217)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_kwel1")
@@ -402,7 +378,7 @@ stream = ExtResource("3_k2t8f")
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "appear"
 libraries = {
-"": SubResource("AnimationLibrary_gnxyv")
+&"": SubResource("AnimationLibrary_gnxyv")
 }
+autoplay = "appear"

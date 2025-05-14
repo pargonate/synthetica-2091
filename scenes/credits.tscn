@@ -11,7 +11,7 @@ font_size = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_kyhnv"]
 font = ExtResource("2_2fbfq")
-font_size = 75
+font_size = 70
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ctdu"]
 bg_color = Color(1, 1, 1, 1)
@@ -80,6 +80,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Developer, Artist, Writer: Nathan Parker
 Font: Sarah Cadigan-Fried (Jersey-10)
+Abell 2218's Voice: VoiceMod's 5G Cellphone
 
 Final Level Music: FrankJavCee 
 (Simpsonwave1995 - Slowed + Reverbed)"

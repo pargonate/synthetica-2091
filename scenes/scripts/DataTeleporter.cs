@@ -5,6 +5,12 @@ public partial class DataTeleporter : Area2D
 	// Variables
 	private string currentScene;
 	private string nextScene;
+	private SceneManager sceneManager;
+
+	public override void _Ready()
+	{
+		sceneManager = GetNode<SceneManager>("/root/SceneManager");
+	}
 
 	public void _on_body_entered(Node body)
 	//	Once Percy enters the teleporter, we have to switch
@@ -40,6 +46,7 @@ public partial class DataTeleporter : Area2D
 					nextScene = "end";
 				}
 
+				sceneManager.Add($"res://scenes/{nextScene}.tscn");
 				GetTree().CallDeferred("change_scene_to_file", $"res://scenes/{nextScene}.tscn");
 			}
 		}

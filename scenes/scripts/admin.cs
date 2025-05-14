@@ -35,7 +35,7 @@ public partial class Admin : CharacterBody2D
 		{
 			if (GetParent().SceneFilePath == "res://scenes/level_3.tscn")
 			{
-				SpawnPacketBomb(-1495, 17200, -150, -125);
+				SpawnPacketBomb(-1495, 4500, -150, -125);
 			}
 			else
 			{
