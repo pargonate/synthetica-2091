@@ -29,10 +29,12 @@ public partial class JumpPad : Area2D
 				// Adjust nodes based on zoom difference
 				Camera2D camera = player.GetNode<Camera2D>("Camera2D");
 				Control UI = player.GetNode<Control>("UI");
+				Node2D terminated = player.GetNode<Node2D>("terminated_shade");
 				camera.Zoom = new Vector2(0.8f, 0.8f);
 				UI.Size = new Vector2(1976, 1088);
 				UI.Position = new Vector2(-485, -314);
 				UI.Scale = new Vector2(0.49f, 0.49f);
+				terminated.Scale = new Vector2(1.4f, 1.4f);
 			}
 		}
 	}

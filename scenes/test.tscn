@@ -33,7 +33,6 @@ position = Vector2(1106, 798)
 
 [node name="storyline_trigger" parent="." instance=ExtResource("7_wngjq")]
 position = Vector2(1880, 117)
-sceneType = "level"
 
 [node name="data_stream" parent="." instance=ExtResource("4_bai7h")]
 position = Vector2(228, 809)

@@ -10,6 +10,7 @@ public partial class Percy : CharacterBody2D
 	private Control UI;
 	private Label debugY;
 	private AnimationPlayer deathAnimator;
+	private Node2D terminatedShade;
 	private Sprite2D topBar;
 	private Sprite2D bottomBar;
 	private AudioStreamPlayer2D terminatedAudio;
@@ -36,8 +37,9 @@ public partial class Percy : CharacterBody2D
 		UI = GetNode<Control>("UI");
 
 		deathAnimator = GetNode<AnimationPlayer>("death_animator");
-		topBar = GetNode<Sprite2D>("top_bar");
-		bottomBar = GetNode<Sprite2D>("bottom_bar");
+		terminatedShade = GetNode<Node2D>("terminated_shade");
+		topBar = GetNode<Sprite2D>("terminated_shade/top_bar");
+		bottomBar = GetNode<Sprite2D>("terminated_shade/bottom_bar");
 		debugY = GetNode<Label>("debug_y");
 		terminatedAudio = GetNode<AudioStreamPlayer2D>("terminated_audio");
 	}
@@ -150,6 +152,7 @@ public partial class Percy : CharacterBody2D
 			UI.Size = new Vector2(2020, 1094);
 			UI.Position = new Vector2(-285, -202);
 			UI.Scale = new Vector2(0.28f, 0.28f);
+			terminatedShade.Scale = new Vector2(1f, 1f);
 			_UpdateMovementAnimations(velocity.X);
 		}
 
@@ -159,20 +162,26 @@ public partial class Percy : CharacterBody2D
 		{
 			if (Input.IsActionPressed("left"))
 			{
-				velocity.X -= walk;
-				if (Input.IsKeyPressed(Godot.Key.Shift))
+				if (!Input.IsActionPressed("right"))
 				{
-					velocity.X -= run;
+					velocity.X -= walk;
+					if (Input.IsKeyPressed(Godot.Key.Shift))
+					{
+						velocity.X -= run;
+					}
 				}
 			}
 
 			if (Input.IsActionPressed("right"))
 			{
-				velocity.X = walk;
-
-				if (Input.IsKeyPressed(Godot.Key.Shift))
+				if (!Input.IsActionPressed("left"))
 				{
-					velocity.X = run;
+					velocity.X = walk;
+	
+					if (Input.IsKeyPressed(Godot.Key.Shift))
+					{
+						velocity.X = run;
+					}
 				}
 			}	
 		}	

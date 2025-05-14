@@ -6,6 +6,7 @@ public partial class StorylineTrigger : Area2D
 	private Storyline storyline;
 	private UI ui;
 	private AudioStreamPlayer2D audioPlayer;
+	private CollisionShape2D collider;
 
 	// Variables
 	[ExportGroup("Storyline Properties")]
@@ -22,6 +23,7 @@ public partial class StorylineTrigger : Area2D
 	{
 		audioPlayer = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 		storyline = GetNode<Storyline>("/root/Storyline");
+		collider = GetNode<CollisionShape2D>("CollisionShape2D");
 	}
 
 
@@ -51,6 +53,7 @@ public partial class StorylineTrigger : Area2D
 					id.Text = "Percy";
 				}
 				audioPlayer.Play();
+				collider.QueueFree(); // Delete it so they can't keep triggering it.
 			}
 		}
 	}

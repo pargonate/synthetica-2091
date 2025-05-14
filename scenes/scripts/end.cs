@@ -38,9 +38,10 @@ public partial class End : Node2D
 				await Task.Delay(TimeSpan.FromSeconds(45));
 				// Reset SimpsonWave1995 (for extra effect :P)
 				var background_audio = GetParent().GetNode<AudioStreamPlayer2D>("background_music");
-				background_audio.VolumeDb = 0.0f;
+				Tween volume = GetTree().CreateTween();
+				volume.TweenProperty(background_audio, "volume_db", 0.0f, 1.0f);
 				// End the game
-				await Task.Delay(TimeSpan.FromSeconds(55));
+				await Task.Delay(TimeSpan.FromSeconds(70));
 				GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
 			}
 		}

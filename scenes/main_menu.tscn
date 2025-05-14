@@ -1,12 +1,104 @@
-[gd_scene load_steps=6 format=3 uid="uid://chhna0odxi8rp"]
+[gd_scene load_steps=13 format=3 uid="uid://chhna0odxi8rp"]
 
 [ext_resource type="Texture2D" uid="uid://dari31irx5jp5" path="res://level_backgrounds/main_menu.png" id="1_0j88o"]
-[ext_resource type="Script" path="res://scenes/scripts/MainMenu.cs" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://cv0h7cjcg3ylp" path="res://scenes/scripts/MainMenu.cs" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dyutxmlfx6oym" path="res://sprites/logo.png" id="2_q7ud0"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="3_acxch"]
+[ext_resource type="Texture2D" uid="uid://b236x4koju7d" path="res://level_backgrounds/stars.png" id="5_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dlcrthd2modfi" path="res://sprites/np.png" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://dbie3sk002npv" path="res://audio/boot_nathan.ogg" id="7_oa1go"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn0no"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("3_acxch")
+font_size = 45
+
+[sub_resource type="Animation" id="Animation_oa1go"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boot/np_logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boot/synthetica_logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 1783)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+resource_name = "appear"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boot/np_logo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.63333, 2.99675),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("boot/synthetica_logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 5.0147, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.00652, 8),
+"transitions": PackedFloat32Array(1.115, 1.115),
+"update": 0,
+"values": [Vector2(960, 1783), Vector2(960, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbmy8"]
+_data = {
+&"RESET": SubResource("Animation_oa1go"),
+&"appear": SubResource("Animation_rtw2f")
+}
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -17,8 +109,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wu84c")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(1012, 325)
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1868.0
+offset_top = -675.0
+offset_right = 3892.0
+offset_bottom = 1325.0
 texture = ExtResource("1_0j88o")
 
 [node name="header" type="MarginContainer" parent="."]
@@ -30,28 +126,30 @@ offset_bottom = 0.119995
 grow_horizontal = 2
 theme_override_constants/margin_top = 12
 
-[node name="TextureRect" type="TextureRect" parent="header"]
+[node name="logo" type="TextureRect" parent="header"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_q7ud0")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="buttons_container" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_top = -168.0
+offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons_container"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 25
 
-[node name="play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="play" type="Button" parent="buttons_container/VBoxContainer"]
 custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.215686, 0.54902, 0.882353, 1)
@@ -60,7 +158,7 @@ theme_override_font_sizes/font_size = 125
 theme_override_styles/normal = SubResource("StyleBoxFlat_dn0no")
 text = "Play"
 
-[node name="credits" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="credits" type="Button" parent="buttons_container/VBoxContainer"]
 custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.215686, 0.54902, 0.882353, 1)
@@ -69,5 +167,108 @@ theme_override_font_sizes/font_size = 125
 theme_override_styles/normal = SubResource("StyleBoxFlat_dn0no")
 text = "Credits"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[node name="quit" type="Button" parent="buttons_container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.215686, 0.54902, 0.882353, 1)
+theme_override_fonts/font = ExtResource("3_acxch")
+theme_override_font_sizes/font_size = 125
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn0no")
+text = "Quit"
+
+[node name="footer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="copyright_notice" type="Label" parent="footer"]
+layout_mode = 2
+text = "© 2025 Nathan Parker"
+label_settings = SubResource("LabelSettings_wu84c")
+
+[node name="trademark_notice" type="Label" parent="footer"]
+layout_mode = 2
+text = "® Stylized 'N' Logo — Nathan Parker"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="version" type="Label" parent="footer"]
+layout_mode = 2
+text = "v1.0.0"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boot_background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1868.0
+offset_top = 1325.0
+offset_right = 3892.0
+offset_bottom = 3325.0
+texture = ExtResource("5_8ln24")
+
+[node name="boot" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 1243.0
+offset_right = 1920.0
+offset_bottom = 2323.0
+
+[node name="np_logo" type="TextureRect" parent="boot"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102083
+anchor_top = 0.369444
+anchor_right = 0.897917
+anchor_bottom = 0.630556
+offset_left = 553.0
+offset_top = 102.0
+offset_right = -553.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_rtw2f")
+metadata/_edit_use_anchors_ = true
+
+[node name="synthetica_logo" type="TextureRect" parent="boot"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -634.0
+offset_top = -178.0
+offset_right = 212.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_q7ud0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 1783)
+
+[node name="boot_audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(960, 1783)
+stream = ExtResource("7_oa1go")
+autoplay = true
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tbmy8")
+}
+autoplay = "appear"
+
+[connection signal="pressed" from="buttons_container/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="buttons_container/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="buttons_container/VBoxContainer/quit" to="." method="_on_quit_pressed"]

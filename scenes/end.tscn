@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dssmrxcxb744h"]
+[gd_scene load_steps=22 format=3 uid="uid://dssmrxcxb744h"]
 
 [ext_resource type="Script" uid="uid://fxp5yhfdgbrj" path="res://scenes/scripts/End.cs" id="1_o5lv4"]
 [ext_resource type="Texture2D" uid="uid://dgprj04l2k3cs" path="res://level_backgrounds/credits.png" id="1_s7xh3"]
@@ -12,6 +12,11 @@
 font = ExtResource("2_s68h6")
 font_size = 100
 font_color = Color(1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5lv4"]
+font = ExtResource("2_s68h6")
+font_size = 75
+font_color = Color(0.831373, 0.72549, 0.494118, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_leg68"]
 font = ExtResource("2_s68h6")
@@ -61,7 +66,7 @@ font_color = Color(0.831373, 0.72549, 0.494118, 0)
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("text_blocks/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -146,31 +151,31 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("logo:modulate")
+tracks/7/path = NodePath("text_blocks/7:label_settings:font_color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("text_blocks/7:label_settings:font_color")
+tracks/8/path = NodePath("text_blocks/8:label_settings:font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("text_blocks/8:label_settings:font_color")
+tracks/9/path = NodePath("text_blocks/10:label_settings:font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -182,31 +187,31 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("text_blocks/10:label_settings:font_color")
+tracks/10/path = NodePath("background:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("background:modulate")
+tracks/11/path = NodePath("end_trigger/black_background:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("black_background:modulate")
+tracks/12/path = NodePath("header/logo:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -215,10 +220,22 @@ tracks/12/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("text_blocks/9:label_settings:font_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aah3y"]
 resource_name = "appear"
-length = 100.0
+length = 115.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -306,23 +323,23 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("logo:modulate")
+tracks/7/path = NodePath("text_blocks/7:label_settings:font_color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(16.2, 22.2, 90.4, 100),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(48, 54.3, 60.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("text_blocks/7:label_settings:font_color")
+tracks/8/path = NodePath("text_blocks/8:label_settings:font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(48, 54.3, 60.4),
+"times": PackedFloat32Array(60.4, 66.7, 71.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -330,50 +347,62 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("text_blocks/8:label_settings:font_color")
+tracks/9/path = NodePath("text_blocks/10:label_settings:font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(60.4, 66.7, 71.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("text_blocks/10:label_settings:font_color")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(71.9, 77.8, 90.4),
+"times": PackedFloat32Array(92.0333, 97.9333, 114.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(0.831373, 0.72549, 0.494118, 1), Color(0.831373, 0.72549, 0.494118, 0)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("background:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(90.4, 100),
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("background:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(105, 114.933),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("black_background:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(71.8, 99.9),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("end_trigger/black_background:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(91.9333, 114.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("header/logo:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(16.1516, 17.9333, 114.667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("text_blocks/9:label_settings:font_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(72.0709, 81.9018, 91.9667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.529412), Color(0.831373, 0.72549, 0.494118, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
@@ -400,12 +429,6 @@ position = Vector2(-6.99991, -47.9999)
 scale = Vector2(1, 0.54)
 texture = ExtResource("1_s7xh3")
 
-[node name="black_background" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-29.4999, -53.5)
-scale = Vector2(5.0175, 5.755)
-texture = ExtResource("5_2qkno")
-
 [node name="text_blocks" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -428,13 +451,29 @@ offset_right = 514.0
 offset_bottom = 187.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "© & ™ Nathan Parker.
+text = "Copyright and Trademark of Nathan Parker  
 All rights reserved."
 label_settings = SubResource("LabelSettings_0wlkp")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
+
+[node name="9" type="Label" parent="text_blocks"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -168.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NATHAN WAS 18 WHEN HE MADE THIS GAME. THE NEXT UPDATE WILL BE WHEN HE IS 42. HOPEFULLY WITH A LOVING WIFE AND CHILDREN. NATHAN HOPES TO BECOME A SOFTWARE ENGINEER, WITH A GOAL OF CHANGING THE WORLD THROUGH CODE ONE LINE AT A TIME."
+label_settings = SubResource("LabelSettings_o5lv4")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="8" type="Label" parent="text_blocks"]
 layout_mode = 1
@@ -629,16 +668,27 @@ autowrap_mode = 3
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
+[node name="header" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -967.0
+offset_top = -588.0
+offset_right = 953.0
+offset_bottom = -333.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 12
+
+[node name="logo" type="TextureRect" parent="header"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_45dir")
+
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_gnxyv")
 }
-
-[node name="logo" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(0, -398)
-scale = Vector2(2, 2)
-texture = ExtResource("4_45dir")
 
 [node name="credits" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_u5ie8")
@@ -650,5 +700,11 @@ position = Vector2(3, 313)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_tf243")
 debug_color = Color(0, 0.631373, 0.443137, 0.419608)
+
+[node name="black_background" type="Sprite2D" parent="end_trigger"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-37, -53)
+scale = Vector2(5.0175, 5.755)
+texture = ExtResource("5_2qkno")
 
 [connection signal="body_entered" from="end_trigger" to="." method="_on_end_trigger_body_entered"]
