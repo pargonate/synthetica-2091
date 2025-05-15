@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwqe4d0axjel8"]
+[gd_scene load_steps=16 format=3 uid="uid://bwqe4d0axjel8"]
 
+[ext_resource type="Script" uid="uid://bubolwqsamwrg" path="res://scenes/scripts/Intro.cs" id="1_es01l"]
 [ext_resource type="Texture2D" uid="uid://b28toajdw6pvu" path="res://level_backgrounds/abell_stars.png" id="1_pwmpv"]
 [ext_resource type="LabelSettings" uid="uid://ci81mtfy6ycgh" path="res://scenes/cinematic.tres" id="2_8f4nq"]
 [ext_resource type="FontFile" uid="uid://dow2gn8ybs3le" path="res://Jersey10-Regular.ttf" id="2_cobtr"]
@@ -125,10 +126,22 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/abell_logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_aah3y"]
 resource_name = "appear"
-length = 47.0
+length = 48.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -136,7 +149,7 @@ tracks/0/path = NodePath("Control/6:label_settings:font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(45, 46.6),
+"times": PackedFloat32Array(43.9667, 47.9333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 1)]
@@ -148,7 +161,7 @@ tracks/1/path = NodePath("Control/0:label_settings:font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 9.5, 16.1),
+"times": PackedFloat32Array(0, 2.86667, 6.06667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.555556), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -160,7 +173,7 @@ tracks/2/path = NodePath("Control/5:label_settings:font_color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(36.2, 40.9, 45),
+"times": PackedFloat32Array(39.2333, 41.7, 43.9667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.521569), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -172,7 +185,7 @@ tracks/3/path = NodePath("Control/1:label_settings:font_color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(16.2, 19.4, 21.9),
+"times": PackedFloat32Array(6.03333, 10, 14.0333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.5), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -184,7 +197,7 @@ tracks/4/path = NodePath("Control/4:label_settings:font_color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(31.5, 33.6, 36),
+"times": PackedFloat32Array(31.2667, 35.0333, 39.0333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.457627), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -196,7 +209,7 @@ tracks/5/path = NodePath("Control/2:label_settings:font_color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(22.1, 23.9, 27.9),
+"times": PackedFloat32Array(14.0667, 19.5, 22.9667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.517647), Color(0.831373, 0.72549, 0.494118, 0)]
@@ -208,10 +221,22 @@ tracks/6/path = NodePath("Control/3:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(28, 29.8, 31.2),
+"times": PackedFloat32Array(23.1, 27.3667, 31.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0.831373, 0.72549, 0.494118, 0), Color(0.831373, 0.72549, 0.494118, 0.566372), Color(0.831373, 0.72549, 0.494118, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/abell_logo:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(43.9351, 48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnxyv"]
@@ -221,6 +246,7 @@ _data = {
 }
 
 [node name="intro" type="Node2D"]
+script = ExtResource("1_es01l")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(2797, 540)
@@ -369,16 +395,19 @@ autowrap_mode = 3
 uppercase = true
 
 [node name="abell_logo" type="Sprite2D" parent="Control"]
-position = Vector2(964, 1217)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(964, 952)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_kwel1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="intro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k2t8f")
 autoplay = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_gnxyv")
 }
 autoplay = "appear"
+
+[connection signal="animation_finished" from="animator" to="." method="_on_animator_animation_finished"]

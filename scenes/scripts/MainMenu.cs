@@ -35,14 +35,14 @@ public partial class MainMenu : Control
 
 	private void _on_play_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/phase_1.tscn");
-		sceneManager.Add("res://scenes/phase_1.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/intro.tscn");
+		sceneManager.Add("res://scenes/intro.tscn");
 	}
 
 	private void _on_credits_pressed()
 	{
 		GetTree().ChangeSceneToFile("res://scenes/credits.tscn");
-		sceneManager.Add("res://scenes/phase_1.tscn");
+		sceneManager.Add("res://scenes/credits.tscn");
 	}
 
 	private void _on_quit_pressed()
